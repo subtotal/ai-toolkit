@@ -1,4 +1,4 @@
-import {SubtotalAgentToolkit} from '@subtotal/agent-toolkit/ai-sdk';
+import {SubtotalAIToolkit} from '@subtotal/ai-toolkit/ai-sdk';
 import {openai} from '@ai-sdk/openai';
 import {
   generateText,
@@ -7,7 +7,7 @@ import {
 
 require('dotenv').config();
 
-const subtotalAgentToolkit = new SubtotalAgentToolkit({
+const subtotalAIToolkit = new SubtotalAIToolkit({
   keyId: process.env.SUBTOTAL_KEY_ID!,
   secretKey: process.env.SUBTOTAL_SECRET_KEY!,
   configuration: {
@@ -21,7 +21,7 @@ const model = openai('gpt-4o');
   const result = await generateText({
     model: model,
     tools: {
-      ...subtotalAgentToolkit.getTools(),
+      ...subtotalAIToolkit.getTools(),
     },
     maxSteps: 5,
     prompt:

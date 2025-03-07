@@ -1,5 +1,5 @@
 {
-  "name": "subtotal-agent-toolkit-examples-langchain",
+  "name": "subtotal-ai-toolkit-examples-langchain",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
   "dependencies": {
     "@langchain/core": "^0.3.6",
     "@langchain/openai": "^0.3.5",
-    "@subtotal/agent-toolkit": "latest",
+    "@subtotal/ai-toolkit": "latest",
     "dotenv": "^16.4.5",
     "langchain": "^0.3.2"
   },

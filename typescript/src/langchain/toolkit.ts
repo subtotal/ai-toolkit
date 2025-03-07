@@ -4,7 +4,7 @@ import SubtotalAPI from '../shared/api';
 import tools from '../shared/tools';
 import {isToolAllowed, type Configuration} from '../shared/configuration';
 
-class SubtotalAgentToolkit implements BaseToolkit {
+class SubtotalAIToolkit implements BaseToolkit {
   private _subtotal: SubtotalAPI;
 
   tools: SubtotalTool[];
@@ -40,4 +40,4 @@ class SubtotalAgentToolkit implements BaseToolkit {
   }
 }
 
-export default SubtotalAgentToolkit;
+export default SubtotalAIToolkit;

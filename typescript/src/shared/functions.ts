@@ -36,19 +36,26 @@ export const createMerchantLinkUrl = async(
   apiConfig: SubtotalApiConfig,
   params: z.infer<typeof createMerchantLinkUrlParameters>
 ) => {
-  const response = await fetch(`${apiConfig.baseUrl}/merchant-link-url`, {
+  const response = await fetch(`${apiConfig.baseUrl}/connection/${params.connection_id}/token`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'X-Api-Key-Id': apiConfig.keyId,
       'X-Api-Key': apiConfig.secretKey,
     },
-    body: JSON.stringify(params),
+    body: JSON.stringify({scope: "link"}),
   });
   if (!response.ok) {
     throw new Error(`Failed to create merchant link url: ${response.statusText}`);
   }
-  return await response.json();
+
+  const data = await response.json();
+  if (!data?.connection_token) {
+    throw new Error('Failed to create merchant link url: no connection token');
+  }
+  return {
+    merchant_link_url: `https://link.subtotal.com/${data.connection_token}`,
+  }
 };
 
 const getAccessToken = async(

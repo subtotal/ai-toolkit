@@ -1,6 +1,6 @@
-# Subtotal Agent Toolkit
+# Subtotal AI Toolkit
 
-The Subtotal Agent Toolkit enables popular agent frameworks including LangChain,
+The Subtotal AI Toolkit enables popular agent frameworks including LangChain,
 CrewAI, Vercel's AI SDK, and Model Context Protocol (MCP) to integrate with Subtotal APIs through function calling. The
 library is not exhaustive of the entire Subtotal API. It currently includes support for TypeScript with Python coming soon.
 
@@ -14,7 +14,7 @@ You don't need this source code unless you want to modify the package. If you ju
 want to use the package run:
 
 ```
-npm install @subtotal/agent-toolkit
+npm install @subtotal/ai-toolkit
 ```
 
 #### Requirements
@@ -26,9 +26,9 @@ npm install @subtotal/agent-toolkit
 The library needs to be configured with your account's secret key credentials which is available in your [Subtotal Dashboard][api-keys]. Additionally, `configuration` enables you to specify the types of actions that can be taken using the toolkit.
 
 ```typescript
-import { SubtotalAgentToolkit } from "@subtotal/agent-toolkit/langchain";
+import { SubtotalAIToolkit } from "@subtotal/ai-toolkit/langchain";
 
-const subtotalAgentToolkit = new SubtotalAgentToolkit({
+const subtotalAIToolkit = new SubtotalAIToolkit({
   keyId: process.env.SUBTOTAL_KEY_ID!,
   secretKey: process.env.SUBTOTAL_SECRET_KEY!,
   configuration: {
@@ -49,7 +49,7 @@ The toolkit works with LangChain and Vercel's AI SDK and can be passed as a list
 ```typescript
 import { AgentExecutor, createStructuredChatAgent } from "langchain/agents";
 
-const tools = subtotalAgentToolkit.getTools();
+const tools = subtotalAIToolkit.getTools();
 
 const agent = await createStructuredChatAgent({
   llm,
@@ -65,7 +65,7 @@ const agentExecutor = new AgentExecutor({
 
 ## Model Context Protocol
 
-The Subtotal Agent Toolkit also supports the [Model Context Protocol (MCP)](https://modelcontextprotocol.com/).
+The Subtotal AI Toolkit also supports the [Model Context Protocol (MCP)](https://modelcontextprotocol.com/).
 
 To run the Subtotal MCP server using npx, use the following command:
 
@@ -78,10 +78,10 @@ Replace `<KEY_ID>` and `<SECRET_KEY>` with your actual Subtotal key ID and secre
 Alternatively, you can set up your own MCP server. For example:
 
 ```typescript
-import { SubtotalAgentToolkit } from "@subtotal/agent-toolkit/modelcontextprotocol";
+import { SubtotalAIToolkit } from "@subtotal/ai-toolkit/modelcontextprotocol";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 
-const server = new SubtotalAgentToolkit({
+const server = new SubtotalAIToolkit({
   keyId: process.env.SUBTOTAL_KEY_ID!,
   secretKey: process.env.SUBTOTAL_SECRET_KEY!,
   configuration: {

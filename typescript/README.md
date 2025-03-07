@@ -1,6 +1,6 @@
-# Subtotal Agent Toolkit - TypeScript
+# Subtotal AI Toolkit - TypeScript
 
-The Subtotal Agent Toolkit enables popular agent frameworks including LangChain and Vercel's AI SDK to integrate with Subtotal APIs through function calling. It also provides tooling to quickly integrate metered billing for prompt and completion token usage.
+The Subtotal AI Toolkit enables popular agent frameworks including LangChain and Vercel's AI SDK to integrate with Subtotal APIs through function calling. It also provides tooling to quickly integrate metered billing for prompt and completion token usage.
 
 ## Installation
 
@@ -8,7 +8,7 @@ You don't need this source code unless you want to modify the package. If you ju
 want to use the package run:
 
 ```
-npm install @subtotal/agent-toolkit
+npm install @subtotal/ai-toolkit
 ```
 
 ### Requirements
@@ -20,9 +20,9 @@ npm install @subtotal/agent-toolkit
 The library needs to be configured with your account's key id and secret key available in your [Subtotal Dashboard][api-keys]. Additionally, `configuration` enables you to specify the types of actions that can be taken using the toolkit.
 
 ```typescript
-import {SubtotalAgentToolkit} from '@subtotal/agent-toolkit/langchain';
+import {SubtotalAIToolkit} from '@subtotal/ai-toolkit/langchain';
 
-const subtotalAgentToolkit = new SubtotalAgentToolkit({
+const subtotalAIToolkit = new SubtotalAIToolkit({
   keyId: process.env.SUBTOTAL_KEY_ID!,
   secretKey: process.env.SUBTOTAL_SECRET_KEY!,
   configuration: {
@@ -38,7 +38,7 @@ The toolkit works with LangChain and Vercel's AI SDK and can be passed as a list
 ```typescript
 import {AgentExecutor, createStructuredChatAgent} from 'langchain/agents';
 
-const tools = subtotalAgentToolkit.getTools();
+const tools = subtotalAIToolkit.getTools();
 
 const agent = await createStructuredChatAgent({
   llm,
@@ -54,13 +54,13 @@ const agentExecutor = new AgentExecutor({
 
 ## Model Context Protocol
 
-The Subtotal Agent Toolkit also supports the [Model Context Protocol (MCP)](https://modelcontextprotocol.com/). See `/examples/modelcontextprotocol` for an example. The same configuration options are available, and the server can be run with all supported transports.
+The Subtotal AI Toolkit also supports the [Model Context Protocol (MCP)](https://modelcontextprotocol.com/). See `/examples/modelcontextprotocol` for an example. The same configuration options are available, and the server can be run with all supported transports.
 
 ```typescript
-import {SubtotalAgentToolkit} from '@subtotal/agent-toolkit/modelcontextprotocol';
+import {SubtotalAIToolkit} from '@subtotal/ai-toolkit/modelcontextprotocol';
 import {StdioServerTransport} from '@modelcontextprotocol/sdk/server/stdio.js';
 
-const server = new SubtotalAgentToolkit({
+const server = new SubtotalAIToolkit({
   keyId: process.env.SUBTOTAL_KEY_ID!,
   secretKey: process.env.SUBTOTAL_SECRET_KEY!,
   configuration: {

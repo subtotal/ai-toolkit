@@ -4,7 +4,7 @@ import {Configuration, isToolAllowed} from '../shared/configuration';
 import SubtotalAPI from '../shared/api';
 import tools from '../shared/tools';
 
-class SubtotalAgentToolkit extends McpServer {
+class SubtotalAIToolkit extends McpServer {
   private _subtotal: SubtotalAPI;
 
   constructor({
@@ -47,4 +47,4 @@ class SubtotalAgentToolkit extends McpServer {
   }
 }
 
-export default SubtotalAgentToolkit;
+export default SubtotalAIToolkit;

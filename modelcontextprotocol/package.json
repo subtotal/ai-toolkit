@@ -1,7 +1,7 @@
 {
   "name": "@subtotal/mcp",
   "version": "0.1.0",
-  "homepage": "https://github.com/typecastle/agent-toolkit/tree/main/modelcontextprotocol",
+  "homepage": "https://github.com/typecastle/ai-toolkit/tree/main/modelcontextprotocol",
   "description": "A command line tool for setting up a Subtotal MCP server",
   "bin": "dist/index.js",
   "files": [
@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.4.1",
-    "@subtotal/agent-toolkit": "latest",
+    "@subtotal/ai-toolkit": "latest",
     "colors": "^1.4.0"
   },
   "keywords": [

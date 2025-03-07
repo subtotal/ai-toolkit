@@ -6,7 +6,7 @@ import type {
 } from 'ai';
 import SubtotalTool from './tool';
 
-class SubtotalAgentToolkit {
+class SubtotalAIToolkit {
   private _subtotal: SubtotalAPI;
 
   tools: {[key: string]: CoreTool};
@@ -43,4 +43,4 @@ class SubtotalAgentToolkit {
   }
 }
 
-export default SubtotalAgentToolkit;
+export default SubtotalAIToolkit;

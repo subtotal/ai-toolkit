@@ -8,7 +8,7 @@ import type {
   ChatCompletionToolMessageParam,
 } from 'openai/resources';
 
-class SubtotalAgentToolkit {
+class SubtotalAIToolkit {
   private _subtotal: SubtotalAPI;
 
   tools: ChatCompletionTool[];
@@ -61,4 +61,4 @@ class SubtotalAgentToolkit {
   }
 }
 
-export default SubtotalAgentToolkit;
+export default SubtotalAIToolkit;

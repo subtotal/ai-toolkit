@@ -1,6 +1,6 @@
 import {main} from '../index';
 import {parseArgs} from '../index';
-import {SubtotalAgentToolkit} from '@subtotal/agent-toolkit/modelcontextprotocol';
+import {SubtotalAIToolkit} from '@subtotal/ai-toolkit/modelcontextprotocol';
 import {StdioServerTransport} from '@modelcontextprotocol/sdk/server/stdio.js';
 
 const MISSING_KEY_ID_ERROR = 'Subtotal API key data not provided. Please either pass it as an argument --subtotal-key-id=$KEY-ID and --subtotal-secret-key=$SECRET-KEY or set the SUBTOTAL_KEY_ID and SUBTOTAL_SECRET_KEY environment variables.';
@@ -115,7 +115,7 @@ describe('parseArgs function', () => {
   });
 });
 
-jest.mock('@subtotal/agent-toolkit/modelcontextprotocol');
+jest.mock('@subtotal/ai-toolkit/modelcontextprotocol');
 jest.mock('@modelcontextprotocol/sdk/server/stdio.js');
 
 describe('main function', () => {
@@ -128,7 +128,7 @@ describe('main function', () => {
 
     await main();
 
-    expect(SubtotalAgentToolkit).toHaveBeenCalledWith({
+    expect(SubtotalAIToolkit).toHaveBeenCalledWith({
       keyId: 'TEST_KEY_ID',
       secretKey: 'TEST_SECRET_KEY',
       configuration: {tools: ALL_ACTIONS},
@@ -148,7 +148,7 @@ describe('main function', () => {
 
     await main();
 
-    expect(SubtotalAgentToolkit).toHaveBeenCalledWith({
+    expect(SubtotalAIToolkit).toHaveBeenCalledWith({
       keyId: 'TEST_KEY_ID',
       secretKey: 'TEST_SECRET_KEY',
       configuration: {

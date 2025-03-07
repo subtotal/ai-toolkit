@@ -1,5 +1,5 @@
 {
-  "name": "subtotal-agent-toolkit-examples-openai",
+  "name": "subtotal-ai-toolkit-examples-openai",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "openai": "^4.86.1",
-    "@subtotal/agent-toolkit": "latest"
+    "@subtotal/ai-toolkit": "latest"
   },
   "devDependencies": {
     "@types/node": "^22.7.4"

@@ -1,2 +1,2 @@
-import SubtotalAgentToolkit from './toolkit';
-export {SubtotalAgentToolkit};
+import SubtotalAIToolkit from './toolkit';
+export {SubtotalAIToolkit};

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import {SubtotalAgentToolkit} from '@subtotal/agent-toolkit/modelcontextprotocol';
+import {SubtotalAIToolkit} from '@subtotal/ai-toolkit/modelcontextprotocol';
 import {StdioServerTransport} from '@modelcontextprotocol/sdk/server/stdio.js';
 import {green, red, yellow} from 'colors';
 
@@ -88,7 +88,7 @@ function handleError(error: any) {
 export async function main() {
   const options = parseArgs(process.argv.slice(2));
 
-  // Create the SubtotalAgentToolkit instance
+  // Create the SubtotalAIToolkit instance
   const selectedTools = options.tools!;
   const configuration: ToolkitConfig = {tools: []};
 
@@ -98,7 +98,7 @@ export async function main() {
     configuration.tools = [...selectedTools];
   }
 
-  const server = new SubtotalAgentToolkit({
+  const server = new SubtotalAIToolkit({
     keyId: options.subtotalKeyId!,
     secretKey: options.subtotalSecretKey!,
     configuration: configuration,

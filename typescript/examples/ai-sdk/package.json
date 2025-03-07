@@ -1,5 +1,5 @@
 {
-  "name": "subtotal-agent-toolkit-examples-ai-sdk",
+  "name": "subtotal-ai-toolkit-examples-ai-sdk",
   "version": "0.1.0",
   "description": "",
   "scripts": {
@@ -9,7 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "@ai-sdk/openai": "^0.0.63",
-    "@subtotal/agent-toolkit": "latest",
+    "@subtotal/ai-toolkit": "latest",
     "ai": "^3.4.7 || ^4.0.0",
     "dotenv": "^16.4.5"
   },
