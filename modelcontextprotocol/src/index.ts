@@ -19,6 +19,7 @@ type Options = {
 
 const ACCEPTED_ARGS = ['subtotal-key-id', 'subtotal-secret-key', 'tools'];
 const ACCEPTED_TOOLS = [
+  'get-merchants',
   'create-connection',
   'create-merchant-link-url',
   'get-purchases',

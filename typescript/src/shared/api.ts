@@ -4,6 +4,7 @@ import {
   getPurchases,
   getPurchaseDetails,
   SubtotalApiConfig,
+  getMerchants,
 } from './functions';
 
 import type {Configuration} from './configuration';
@@ -22,7 +23,10 @@ class SubtotalAPI {
   }
 
   async run(method: string, arg: any) {
-    if (method === 'create-connection') {
+    if (method === 'get-merchants') {
+      const output = JSON.stringify(await getMerchants(this.apiConfig));
+      return output;
+    } else if (method === 'create-connection') {
       const output = JSON.stringify(
         await createConnection(this.apiConfig, arg)
       );

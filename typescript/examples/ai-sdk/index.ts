@@ -10,7 +10,7 @@ const subtotalAIToolkit = new SubtotalAIToolkit({
   keyId: process.env.SUBTOTAL_KEY_ID!,
   secretKey: process.env.SUBTOTAL_SECRET_KEY!,
   configuration: {
-    tools: ['get-purchases', 'get-purchase-details'],
+    tools: ['get-merchants', 'create-connection', 'create-merchant-link-url', 'get-purchases', 'get-purchase-details'],
   },
 });
 
@@ -19,12 +19,11 @@ const model = openai('gpt-4o');
 (async () => {
   const result = await generateText({
     model: model,
-    tools: {
-      ...subtotalAIToolkit.getTools(),
-    },
-    maxSteps: 5,
-    prompt: 'Get the purchase details for the purchase with id 1234567890',
+    tools: {...subtotalAIToolkit.getTools()},
+    maxSteps: 3,
+    prompt: 'Get the purchase details for the last purchase for ' +
+      'connection ID "01JNHY5M3Q5207QEF9YYV909MG" and give a ' +
+      'product recommendation based on the contents of that purchase'
   });
-
-  console.log(result);
+  console.log(JSON.stringify(result, null, 2));
 })();

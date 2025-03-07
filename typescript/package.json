@@ -65,7 +65,7 @@
     "openai": "^4.86.1",
     "@langchain/core": "^0.3.6",
     "@modelcontextprotocol/sdk": "^1.4.1",
-    "ai": "^3.4.7 || ^4.0.0"
+    "ai": "^4.1.54"
   },
   "workspaces": [
     ".",

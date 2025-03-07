@@ -42,6 +42,7 @@ Add the following to your `claude_desktop_config.json`. See [here](https://model
 
 | Tool                       | Description                    |
 | -------------------------- | ------------------------------ |
+| `get-merchants`            | Get merchants                  |
 | `create-connection`        | Create a new connection        |
 | `create-merchant-link-url` | Create a new merchant link URL |
 | `get-purchases`            | Get purchases                  |

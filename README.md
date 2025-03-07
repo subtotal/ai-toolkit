@@ -108,6 +108,7 @@ main().catch((error) => {
 
 ## Supported API methods
 
+- [Get merchants](https://www.subtotal.com/docs/api-reference/merchants/get-merchants)
 - [Create a connection](https://www.subtotal.com/docs/api-reference/connection/create-connection)
 - [Create a merchant link URL](https://www.subtotal.com/docs/api-reference/connection/create-connection-token)
 - [Get purchases](https://www.subtotal.com/docs/api-reference/purchases/get-purchases)

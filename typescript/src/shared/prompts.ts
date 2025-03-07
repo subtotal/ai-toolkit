@@ -27,3 +27,9 @@ It takes two arguments:
 - connection_id (str): The ID of the connection to fetch the detailed purchase for.
 - purchase_id (str): The ID of the purchase to fetch details for.
 `;
+
+export const getMerchantsPrompt = `
+This tool will fetch a list of available merchants from Subtotal.
+
+It takes no arguments.
+`;

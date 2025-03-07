@@ -29,3 +29,5 @@ export const getPurchaseDetailsParameters = z.object({
     .string()
     .describe('The ID of the purchase to fetch details for.'),
 });
+
+export const getMerchantsParameters = z.object({});

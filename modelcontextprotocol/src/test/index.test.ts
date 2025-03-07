@@ -177,6 +177,7 @@ describe('main function', () => {
 });
 
 const ALL_TOOLS = [
+  'get-merchants',
   'create-connection',
   'create-merchant-link-url',
   'get-purchases',

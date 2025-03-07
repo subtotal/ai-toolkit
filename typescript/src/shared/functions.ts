@@ -132,3 +132,14 @@ export const getPurchaseDetails = async (
   }
   return await response.json();
 };
+
+export const getMerchants = async (apiConfig: SubtotalApiConfig) => {
+  const response = await fetch(`${apiConfig.baseUrl}/merchants`, {
+    method: 'GET',
+    headers: {
+      'X-Api-Key-Id': apiConfig.keyId,
+      'X-Api-Key': apiConfig.secretKey,
+    },
+  });
+  return await response.json();
+};

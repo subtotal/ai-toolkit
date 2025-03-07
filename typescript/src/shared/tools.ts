@@ -5,6 +5,7 @@ import {
   createMerchantLinkUrlPrompt,
   getPurchasesPrompt,
   getPurchaseDetailsPrompt,
+  getMerchantsPrompt,
 } from './prompts';
 
 import {
@@ -12,6 +13,7 @@ import {
   createMerchantLinkUrlParameters,
   getPurchasesParameters,
   getPurchaseDetailsParameters,
+  getMerchantsParameters,
 } from './parameters';
 
 export type Tool = {
@@ -22,6 +24,12 @@ export type Tool = {
 };
 
 const tools: Tool[] = [
+  {
+    method: 'get-merchants',
+    name: 'Get Merchants',
+    description: getMerchantsPrompt,
+    parameters: getMerchantsParameters,
+  },
   {
     method: 'create-connection',
     name: 'Create a Connection',
