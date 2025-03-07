@@ -12,6 +12,7 @@ class SubtotalAIToolkit extends McpServer {
     secretKey,
     configuration,
   }: {
+    keyId: string;
     secretKey: string;
     configuration: Configuration;
   }) {

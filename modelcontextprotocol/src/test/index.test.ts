@@ -27,6 +27,7 @@ describe('parseArgs function', () => {
       expect(options.subtotalKeyId).toBe('TEST_KEY_ID');
       expect(options.subtotalSecretKey).toBe('TEST_SECRET_KEY');
       expect(options.tools).toEqual(['all']);
+      delete process.env.SUBTOTAL_KEY_ID;
     });
 
     it('should parse secret key and tools arguments correctly', () => {
@@ -36,6 +37,7 @@ describe('parseArgs function', () => {
       expect(options.subtotalKeyId).toBe('TEST_KEY_ID');
       expect(options.subtotalSecretKey).toBe('TEST_SECRET_KEY');
       expect(options.tools).toEqual(['all']);
+      delete process.env.SUBTOTAL_SECRET_KEY;
     });
 
     it('should parse api key environment variables correctly', () => {
@@ -46,6 +48,8 @@ describe('parseArgs function', () => {
       expect(options.subtotalKeyId).toBe('TEST_KEY_ID');
       expect(options.subtotalSecretKey).toBe('TEST_SECRET_KEY');
       expect(options.tools).toEqual(['all']);
+      delete process.env.SUBTOTAL_KEY_ID;
+      delete process.env.SUBTOTAL_SECRET_KEY;
     });
 
     it('if api key set in env variable but also passed into args, should prefer args key', () => {
@@ -60,6 +64,8 @@ describe('parseArgs function', () => {
       expect(options.subtotalKeyId).toBe('TEST_KEY_ID');
       expect(options.subtotalSecretKey).toBe('TEST_SECRET_KEY');
       expect(options.tools).toEqual(['all']);
+      delete process.env.SUBTOTAL_KEY_ID;
+      delete process.env.SUBTOTAL_SECRET_KEY;
     });
 
     it('should parse tools argument correctly if a list of tools is provided', () => {
@@ -113,7 +119,7 @@ describe('parseArgs function', () => {
         '--tools=get-purchases,create-connection,fake.tool',
       ];
       expect(() => parseArgs(args)).toThrow(
-        'Invalid tool: fake.tool. Accepted tools are: customers.create, customers.read, products.create, products.read, prices.create, prices.read, paymentLinks.create, invoices.create, invoices.update, invoiceItems.create, balance.read, refunds.create, paymentIntents.read, documentation.read'
+        'Invalid tool: fake.tool. Accepted tools are: create-connection, create-merchant-link-url, get-purchases, get-purchase-details'
       );
     });
   });

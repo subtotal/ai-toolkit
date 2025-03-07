@@ -26,7 +26,7 @@ const tools: Tool[] = [
     method: 'create-connection',
     name: 'Create a Connection',
     description: createConnectionPrompt,
-    parameters: createConnectionPrompt,
+    parameters: createConnectionParameters,
   },
   {
     method: 'create-merchant-link-url',

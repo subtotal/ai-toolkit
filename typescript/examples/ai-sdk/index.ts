@@ -2,7 +2,6 @@ import {SubtotalAIToolkit} from '@subtotal/ai-toolkit/ai-sdk';
 import {openai} from '@ai-sdk/openai';
 import {
   generateText,
-  experimental_wrapLanguageModel as wrapLanguageModel,
 } from 'ai';
 
 require('dotenv').config();
