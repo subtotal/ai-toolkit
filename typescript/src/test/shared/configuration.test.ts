@@ -1,5 +1,5 @@
 import z from 'zod';
-import {isToolAllowed} from '../../shared/configuration';
+import {isToolAllowed, Tools} from '../../shared/configuration';
 
 describe('isToolAllowed', () => {
   it('should return true if all permissions are allowed', () => {

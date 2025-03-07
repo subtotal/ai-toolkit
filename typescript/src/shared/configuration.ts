@@ -1,5 +1,13 @@
 import type {Tool} from './tools';
 
+export const Tools = {
+  getPurchases: 'get-purchases',
+  getPurchaseDetails: 'get-purchase-details',
+  createConnection: 'create-connection',
+  createMerchantLinkUrl: 'create-merchant-link-url',
+  getMerchants: 'get-merchants',
+} as const;
+
 // Configuration provides various settings and options for the integration
 // to tune and manage how it behaves.
 export type Configuration = {

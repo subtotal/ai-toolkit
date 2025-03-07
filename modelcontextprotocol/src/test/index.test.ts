@@ -119,7 +119,7 @@ describe('parseArgs function', () => {
         '--tools=get-purchases,create-connection,fake.tool',
       ];
       expect(() => parseArgs(args)).toThrow(
-        'Invalid tool: fake.tool. Accepted tools are: create-connection, create-merchant-link-url, get-purchases, get-purchase-details'
+        'Invalid tool: fake.tool. Accepted tools are: get-purchases, get-purchase-details, create-connection, create-merchant-link-url, get-merchants'
       );
     });
   });
@@ -177,9 +177,9 @@ describe('main function', () => {
 });
 
 const ALL_TOOLS = [
-  'get-merchants',
-  'create-connection',
-  'create-merchant-link-url',
   'get-purchases',
   'get-purchase-details',
+  'create-connection',
+  'create-merchant-link-url',
+  'get-merchants',
 ];

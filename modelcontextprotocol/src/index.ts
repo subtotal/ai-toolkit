@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 
-import {SubtotalAIToolkit} from '@subtotal/ai-toolkit/modelcontextprotocol';
+import {
+  SubtotalAIToolkit,
+  Tools,
+} from '@subtotal/ai-toolkit/modelcontextprotocol';
 import {StdioServerTransport} from '@modelcontextprotocol/sdk/server/stdio.js';
 import {green, red, yellow} from 'colors';
 
@@ -18,13 +21,6 @@ type Options = {
 };
 
 const ACCEPTED_ARGS = ['subtotal-key-id', 'subtotal-secret-key', 'tools'];
-const ACCEPTED_TOOLS = [
-  'get-merchants',
-  'create-connection',
-  'create-merchant-link-url',
-  'get-purchases',
-  'get-purchase-details',
-];
 
 export function parseArgs(args: string[]): Options {
   const options: Options = {};
@@ -55,13 +51,15 @@ export function parseArgs(args: string[]): Options {
   }
 
   // Validate tools against accepted enum values
+  const acceptedTools = Object.values(Tools) as string[];
   options.tools.forEach((tool: string) => {
     if (tool == 'all') {
       return;
     }
-    if (!ACCEPTED_TOOLS.includes(tool.trim())) {
+    const trimmedTool = tool.trim();
+    if (!acceptedTools.includes(trimmedTool)) {
       throw new Error(
-        `Invalid tool: ${tool}. Accepted tools are: ${ACCEPTED_TOOLS.join(
+        `Invalid tool: ${tool}. Accepted tools are: ${Object.values(Tools).join(
           ', '
         )}`
       );
@@ -95,7 +93,7 @@ export async function main() {
   const configuration: ToolkitConfig = {tools: []};
 
   if (selectedTools.includes('all')) {
-    configuration.tools = [...ACCEPTED_TOOLS];
+    configuration.tools = [...Object.values(Tools)];
   } else {
     configuration.tools = [...selectedTools];
   }

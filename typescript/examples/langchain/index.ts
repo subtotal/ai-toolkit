@@ -1,4 +1,4 @@
-import {SubtotalAIToolkit} from '@subtotal/ai-toolkit/langchain';
+import {SubtotalAIToolkit, Tools} from '@subtotal/ai-toolkit/langchain';
 import {ChatOpenAI} from '@langchain/openai';
 import type {ChatPromptTemplate} from '@langchain/core/prompts';
 import {pull} from 'langchain/hub';
@@ -14,7 +14,7 @@ const subtotalAIToolkit = new SubtotalAIToolkit({
   keyId: process.env.SUBTOTAL_KEY_ID!,
   secretKey: process.env.SUBTOTAL_SECRET_KEY!,
   configuration: {
-    tools: ['get-purchases', 'get-purchase-details'],
+    tools: [Tools.getPurchases, Tools.getPurchaseDetails],
   },
 });
 

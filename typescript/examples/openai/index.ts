@@ -1,4 +1,4 @@
-import {SubtotalAIToolkit} from '@subtotal/ai-toolkit/openai';
+import {SubtotalAIToolkit, Tools} from '@subtotal/ai-toolkit/openai';
 import OpenAI from 'openai';
 import type {ChatCompletionMessageParam} from 'openai/resources';
 
@@ -10,7 +10,7 @@ const subtotalAIToolkit = new SubtotalAIToolkit({
   keyId: process.env.SUBTOTAL_KEY_ID!,
   secretKey: process.env.SUBTOTAL_SECRET_KEY!,
   configuration: {
-    tools: ['get-purchases', 'get-purchase-details'],
+    tools: [Tools.getPurchases, Tools.getPurchaseDetails],
   },
 });
 

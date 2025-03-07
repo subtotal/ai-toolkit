@@ -1,2 +1,3 @@
 import SubtotalAIToolkit from './toolkit';
-export {SubtotalAIToolkit};
+import {Tools} from '../shared/configuration';
+export {SubtotalAIToolkit, Tools};
