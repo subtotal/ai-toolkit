@@ -1,4 +1,4 @@
-import {SubtotalAIToolkit, Tools} from '@subtotal/ai-toolkit/langchain';
+import {SubtotalAIToolkit, Tools} from '@subtotal-inc/ai-toolkit/langchain';
 import {ChatOpenAI} from '@langchain/openai';
 import type {ChatPromptTemplate} from '@langchain/core/prompts';
 import {pull} from 'langchain/hub';

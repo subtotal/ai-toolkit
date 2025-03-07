@@ -1,4 +1,4 @@
-import {SubtotalAIToolkit, Tools} from '@subtotal/ai-toolkit/openai';
+import {SubtotalAIToolkit, Tools} from '@subtotal-inc/ai-toolkit/openai';
 import OpenAI from 'openai';
 import type {ChatCompletionMessageParam} from 'openai/resources';
 

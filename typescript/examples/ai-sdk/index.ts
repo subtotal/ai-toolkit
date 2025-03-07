@@ -1,4 +1,4 @@
-import {SubtotalAIToolkit, Tools} from '@subtotal/ai-toolkit/ai-sdk';
+import {SubtotalAIToolkit, Tools} from '@subtotal-inc/ai-toolkit/ai-sdk';
 import {openai} from '@ai-sdk/openai';
 import {generateText} from 'ai';
 

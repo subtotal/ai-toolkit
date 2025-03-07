@@ -81,7 +81,7 @@ importers:
       '@ai-sdk/openai':
         specifier: ^0.0.63
         version: 0.0.63(zod@3.24.2)
-      '@subtotal/ai-toolkit':
+      '@subtotal-inc/ai-toolkit':
         specifier: workspace:*
         version: link:../..
       ai:
@@ -103,7 +103,7 @@ importers:
       '@langchain/openai':
         specifier: ^0.3.5
         version: 0.3.17(@langchain/core@0.3.42(openai@4.86.2(zod@3.24.2)))
-      '@subtotal/ai-toolkit':
+      '@subtotal-inc/ai-toolkit':
         specifier: workspace:*
         version: link:../..
       dotenv:
@@ -119,7 +119,7 @@ importers:
 
   examples/openai:
     dependencies:
-      '@subtotal/ai-toolkit':
+      '@subtotal-inc/ai-toolkit':
         specifier: workspace:*
         version: link:../..
       dotenv:

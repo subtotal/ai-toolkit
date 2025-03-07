@@ -3,7 +3,7 @@
 import {
   SubtotalAIToolkit,
   Tools,
-} from '@subtotal/ai-toolkit/modelcontextprotocol';
+} from '@subtotal-inc/ai-toolkit/modelcontextprotocol';
 import {StdioServerTransport} from '@modelcontextprotocol/sdk/server/stdio.js';
 import {green, red, yellow} from 'colors';
 

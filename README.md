@@ -14,7 +14,7 @@ You don't need this source code unless you want to modify the package. If you ju
 want to use the package run:
 
 ```
-npm install @subtotal/ai-toolkit
+npm install @subtotal-inc/ai-toolkit
 ```
 
 #### Requirements
@@ -26,7 +26,7 @@ npm install @subtotal/ai-toolkit
 The library needs to be configured with your account's secret key credentials which is available in your [Subtotal Dashboard][api-keys]. Additionally, `configuration` enables you to specify the types of actions that can be taken using the toolkit.
 
 ```typescript
-import { SubtotalAIToolkit } from "@subtotal/ai-toolkit/langchain";
+import { SubtotalAIToolkit } from "@subtotal-inc/ai-toolkit/langchain";
 
 const subtotalAIToolkit = new SubtotalAIToolkit({
   keyId: process.env.SUBTOTAL_KEY_ID!,
@@ -70,7 +70,7 @@ The Subtotal AI Toolkit also supports the [Model Context Protocol (MCP)](https:/
 To run the Subtotal MCP server using npx, use the following command:
 
 ```bash
-npx -y @subtotal/mcp --tools=all --subtotal-key-id=<KEY_ID> --subtotal-secret-key=<SECRET_KEY>
+npx -y @subtotal-inc/mcp --tools=all --subtotal-key-id=<KEY_ID> --subtotal-secret-key=<SECRET_KEY>
 ```
 
 Replace `<KEY_ID>` and `<SECRET_KEY>` with your actual Subtotal key ID and secret key. Or, you could set the SUBTOTAL_KEY_ID and SUBTOTAL_SECRET_KEY in your environment variables.
@@ -78,7 +78,7 @@ Replace `<KEY_ID>` and `<SECRET_KEY>` with your actual Subtotal key ID and secre
 Alternatively, you can set up your own MCP server. For example:
 
 ```typescript
-import { SubtotalAIToolkit } from "@subtotal/ai-toolkit/modelcontextprotocol";
+import { SubtotalAIToolkit } from "@subtotal-inc/ai-toolkit/modelcontextprotocol";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 
 const server = new SubtotalAIToolkit({

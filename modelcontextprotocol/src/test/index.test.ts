@@ -1,6 +1,6 @@
 import {main} from '../index';
 import {parseArgs} from '../index';
-import {SubtotalAIToolkit} from '@subtotal/ai-toolkit/modelcontextprotocol';
+import {SubtotalAIToolkit} from '@subtotal-inc/ai-toolkit/modelcontextprotocol';
 import {StdioServerTransport} from '@modelcontextprotocol/sdk/server/stdio.js';
 
 const MISSING_KEY_ID_ERROR =
@@ -125,7 +125,7 @@ describe('parseArgs function', () => {
   });
 });
 
-jest.mock('@subtotal/ai-toolkit/modelcontextprotocol');
+jest.mock('@subtotal-inc/ai-toolkit/modelcontextprotocol');
 jest.mock('@modelcontextprotocol/sdk/server/stdio.js');
 
 describe('main function', () => {

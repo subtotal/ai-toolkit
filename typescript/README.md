@@ -7,7 +7,7 @@ The Subtotal AI Toolkit enables popular agent frameworks including LangChain and
 You don't need this source code unless you want to modify the package. If you just want to use the package run:
 
 ```
-npm install @subtotal/ai-toolkit
+npm install @subtotal-inc/ai-toolkit
 ```
 
 ### Requirements
@@ -19,7 +19,7 @@ npm install @subtotal/ai-toolkit
 The library needs to be configured with your account's key id and secret key available in your [Subtotal Dashboard][api-keys]. Additionally, `configuration` enables you to specify the types of actions that can be taken using the toolkit.
 
 ```typescript
-import {SubtotalAIToolkit} from '@subtotal/ai-toolkit/langchain';
+import {SubtotalAIToolkit} from '@subtotal-inc/ai-toolkit/langchain';
 
 const subtotalAIToolkit = new SubtotalAIToolkit({
   keyId: process.env.SUBTOTAL_KEY_ID!,
@@ -56,7 +56,7 @@ const agentExecutor = new AgentExecutor({
 The Subtotal AI Toolkit also supports the [Model Context Protocol (MCP)](https://modelcontextprotocol.com/). See `/examples/modelcontextprotocol` for an example. The same configuration options are available, and the server can be run with all supported transports.
 
 ```typescript
-import {SubtotalAIToolkit} from '@subtotal/ai-toolkit/modelcontextprotocol';
+import {SubtotalAIToolkit} from '@subtotal-inc/ai-toolkit/modelcontextprotocol';
 import {StdioServerTransport} from '@modelcontextprotocol/sdk/server/stdio.js';
 
 const server = new SubtotalAIToolkit({

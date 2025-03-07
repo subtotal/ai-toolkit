@@ -11,7 +11,7 @@ importers:
       '@modelcontextprotocol/sdk':
         specifier: ^1.4.1
         version: 1.6.1
-      '@subtotal/ai-toolkit':
+      '@subtotal-inc/ai-toolkit':
         specifier: ../typescript
         version: link:../typescript
       colors:

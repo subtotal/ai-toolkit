@@ -8,10 +8,10 @@ To run the Subtotal MCP server using npx, use the following command:
 
 ```bash
 # To set up all available tools
-npx -y @subtotal/mcp --tools=all --subtotal-key-id=<KEY-ID> --subtotal-secret-key=<SECRET-KEY>
+npx -y @subtotal-inc/mcp --tools=all --subtotal-key-id=<KEY-ID> --subtotal-secret-key=<SECRET-KEY>
 
 # To set up specific tools
-npx -y @subtotal/mcp --tools=get-purchases,get-purchase-details --subtotal-key-id=<KEY-ID> --subtotal-secret-key=<SECRET-KEY>
+npx -y @subtotal-inc/mcp --tools=get-purchases,get-purchase-details --subtotal-key-id=<KEY-ID> --subtotal-secret-key=<SECRET-KEY>
 ```
 
 Make sure to replace `<KEY-ID>` and `<SECRET-KEY>` with your actual Subtotal API key ID and secret key value.
@@ -28,7 +28,7 @@ Add the following to your `claude_desktop_config.json`. See [here](https://model
             “command”: “npx”,
             “args”: [
                 “-y”,
-                “@subtotal/mcp”,
+                “@subtotal-inc/mcp”,
                 “--tools=all”,
                 “--subtotal-key-id=<KEY-ID>”,
                 “--subtotal-secret-key=<SECRET-KEY>”
