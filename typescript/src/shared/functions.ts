@@ -12,7 +12,6 @@ export interface SubtotalApiConfig {
   baseUrl: string;
 }
 
-// TODO: This is where we send the API requests to Subtotal
 export const createConnection = async (
   apiConfig: SubtotalApiConfig,
   params: z.infer<typeof createConnectionParameters>
@@ -29,7 +28,7 @@ export const createConnection = async (
   if (!response.ok) {
     throw new Error(`Failed to create connection: ${response.statusText}`);
   }
-  return await response.json();
+  return response.json();
 };
 
 export const createMerchantLinkUrl = async (
@@ -105,7 +104,7 @@ export const getPurchases = async (
   if (!response.ok) {
     throw new Error(`Failed to get purchases: ${response.statusText}`);
   }
-  return await response.json();
+  return response.json();
 };
 
 export const getPurchaseDetails = async (
@@ -130,7 +129,7 @@ export const getPurchaseDetails = async (
   if (!response.ok) {
     throw new Error(`Failed to get purchase details: ${response.statusText}`);
   }
-  return await response.json();
+  return response.json();
 };
 
 export const getMerchants = async (apiConfig: SubtotalApiConfig) => {
@@ -141,5 +140,5 @@ export const getMerchants = async (apiConfig: SubtotalApiConfig) => {
       'X-Api-Key': apiConfig.secretKey,
     },
   });
-  return await response.json();
+  return response.json();
 };
