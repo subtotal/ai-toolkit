@@ -40,13 +40,12 @@ Add the following to your `claude_desktop_config.json`. See [here](https://model
 
 ## Available tools
 
-| Tool | Description |
-|------|-------------|
-| `create-connection` | Create a new connection |
+| Tool                       | Description                    |
+| -------------------------- | ------------------------------ |
+| `create-connection`        | Create a new connection        |
 | `create-merchant-link-url` | Create a new merchant link URL |
-| `get-purchases` | Get purchases |
-| `get-purchase-details` | Get purchase details |
-
+| `get-purchases`            | Get purchases                  |
+| `get-purchase-details`     | Get purchase details           |
 
 ## Debugging the Server
 

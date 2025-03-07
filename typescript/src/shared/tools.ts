@@ -12,7 +12,7 @@ import {
   createMerchantLinkUrlParameters,
   getPurchasesParameters,
   getPurchaseDetailsParameters,
- } from './parameters';
+} from './parameters';
 
 export type Tool = {
   method: string;

@@ -67,9 +67,10 @@ export function parseArgs(args: string[]): Options {
     }
   });
 
-  // Get Subtotal API Credentials 
+  // Get Subtotal API Credentials
   const subtotalKeyId = options.subtotalKeyId || process.env.SUBTOTAL_KEY_ID;
-  const subtotalSecretKey = options.subtotalSecretKey || process.env.SUBTOTAL_SECRET_KEY;
+  const subtotalSecretKey =
+    options.subtotalSecretKey || process.env.SUBTOTAL_SECRET_KEY;
   if (!subtotalKeyId || !subtotalSecretKey) {
     throw new Error(
       'Subtotal API key data not provided. Please either pass it as an argument --subtotal-key-id=$KEY-ID and --subtotal-secret-key=$SECRET-KEY or set the SUBTOTAL_KEY_ID and SUBTOTAL_SECRET_KEY environment variables.'

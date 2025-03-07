@@ -4,8 +4,7 @@ The Subtotal AI Toolkit enables popular agent frameworks including LangChain and
 
 ## Installation
 
-You don't need this source code unless you want to modify the package. If you just
-want to use the package run:
+You don't need this source code unless you want to modify the package. If you just want to use the package run:
 
 ```
 npm install @subtotal/ai-toolkit

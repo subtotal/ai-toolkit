@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.4.1",
-    "@subtotal/ai-toolkit": "latest",
+    "@subtotal/ai-toolkit": "../typescript",
     "colors": "^1.4.0"
   },
   "keywords": [

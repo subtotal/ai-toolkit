@@ -8,17 +8,16 @@ import {
 
 import type {Configuration} from './configuration';
 
-
 class SubtotalAPI {
-  configuration: Configuration
-  apiConfig: SubtotalApiConfig
+  configuration: Configuration;
+  apiConfig: SubtotalApiConfig;
 
   constructor(keyId: string, secretKey: string, configuration: Configuration) {
     this.apiConfig = {
       keyId,
       secretKey,
       baseUrl: 'https://api.subtotal.com',
-    }
+    };
     this.configuration = configuration || {};
   }
 
@@ -34,9 +33,7 @@ class SubtotalAPI {
       );
       return output;
     } else if (method === 'get-purchases') {
-      const output = JSON.stringify(
-        await getPurchases(this.apiConfig, arg)
-      );
+      const output = JSON.stringify(await getPurchases(this.apiConfig, arg));
       return output;
     } else if (method === 'get-purchase-details') {
       const output = JSON.stringify(

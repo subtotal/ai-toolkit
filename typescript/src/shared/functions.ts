@@ -13,7 +13,7 @@ export interface SubtotalApiConfig {
 }
 
 // TODO: This is where we send the API requests to Subtotal
-export const createConnection = async(
+export const createConnection = async (
   apiConfig: SubtotalApiConfig,
   params: z.infer<typeof createConnectionParameters>
 ) => {
@@ -30,23 +30,28 @@ export const createConnection = async(
     throw new Error(`Failed to create connection: ${response.statusText}`);
   }
   return await response.json();
-}
+};
 
-export const createMerchantLinkUrl = async(
+export const createMerchantLinkUrl = async (
   apiConfig: SubtotalApiConfig,
   params: z.infer<typeof createMerchantLinkUrlParameters>
 ) => {
-  const response = await fetch(`${apiConfig.baseUrl}/connection/${params.connection_id}/token`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Api-Key-Id': apiConfig.keyId,
-      'X-Api-Key': apiConfig.secretKey,
-    },
-    body: JSON.stringify({scope: "link"}),
-  });
+  const response = await fetch(
+    `${apiConfig.baseUrl}/connection/${params.connection_id}/token`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Api-Key-Id': apiConfig.keyId,
+        'X-Api-Key': apiConfig.secretKey,
+      },
+      body: JSON.stringify({scope: 'link'}),
+    }
+  );
   if (!response.ok) {
-    throw new Error(`Failed to create merchant link url: ${response.statusText}`);
+    throw new Error(
+      `Failed to create merchant link url: ${response.statusText}`
+    );
   }
 
   const data = await response.json();
@@ -55,22 +60,25 @@ export const createMerchantLinkUrl = async(
   }
   return {
     merchant_link_url: `https://link.subtotal.com/${data.connection_token}`,
-  }
+  };
 };
 
-const getAccessToken = async(
+const getAccessToken = async (
   apiConfig: SubtotalApiConfig,
   connectionId: string
 ) => {
-  const response = await fetch(`${apiConfig.baseUrl}/connection/${connectionId}/token`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Api-Key-Id': apiConfig.keyId,
-      'X-Api-Key': apiConfig.secretKey,
-    },
-    body: JSON.stringify({scope: "access"}),
-  });
+  const response = await fetch(
+    `${apiConfig.baseUrl}/connection/${connectionId}/token`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Api-Key-Id': apiConfig.keyId,
+        'X-Api-Key': apiConfig.secretKey,
+      },
+      body: JSON.stringify({scope: 'access'}),
+    }
+  );
   if (!response.ok) {
     throw new Error(`Failed to get access token: ${response.statusText}`);
   }
@@ -78,7 +86,7 @@ const getAccessToken = async(
   return data?.connection_token;
 };
 
-export const getPurchases = async(
+export const getPurchases = async (
   apiConfig: SubtotalApiConfig,
   params: z.infer<typeof getPurchasesParameters>
 ) => {
@@ -86,7 +94,7 @@ export const getPurchases = async(
   const response = await fetch(`${apiConfig.baseUrl}/purchases`, {
     method: 'GET',
     headers: {
-      'Authorization': `Bearer ${accessToken}`,
+      Authorization: `Bearer ${accessToken}`,
       'X-Api-Key-Id': apiConfig.keyId,
       'X-Api-Key': apiConfig.secretKey,
     },
@@ -100,7 +108,7 @@ export const getPurchases = async(
   return await response.json();
 };
 
-export const getPurchaseDetails = async(
+export const getPurchaseDetails = async (
   apiConfig: SubtotalApiConfig,
   params: z.infer<typeof getPurchaseDetailsParameters>
 ) => {
@@ -108,14 +116,17 @@ export const getPurchaseDetails = async(
   if (!accessToken) {
     throw new Error('Unable to get an access token for the connection.');
   }
-  const response = await fetch(`${apiConfig.baseUrl}/purchases/${params.purchase_id}`, {
-    method: 'GET',
-    headers: {
-      'Authorization': `Bearer ${accessToken}`,
-      'X-Api-Key-Id': apiConfig.keyId,
-      'X-Api-Key': apiConfig.secretKey,
-    },
-  });
+  const response = await fetch(
+    `${apiConfig.baseUrl}/purchases/${params.purchase_id}`,
+    {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'X-Api-Key-Id': apiConfig.keyId,
+        'X-Api-Key': apiConfig.secretKey,
+      },
+    }
+  );
   if (!response.ok) {
     throw new Error(`Failed to get purchase details: ${response.statusText}`);
   }

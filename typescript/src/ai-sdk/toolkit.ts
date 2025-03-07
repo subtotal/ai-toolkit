@@ -1,9 +1,7 @@
 import SubtotalAPI from '../shared/api';
 import tools from '../shared/tools';
 import {isToolAllowed, type Configuration} from '../shared/configuration';
-import type {
-  CoreTool,
-} from 'ai';
+import type {CoreTool} from 'ai';
 import SubtotalTool from './tool';
 
 class SubtotalAIToolkit {

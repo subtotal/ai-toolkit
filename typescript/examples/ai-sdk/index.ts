@@ -24,8 +24,7 @@ const model = openai('gpt-4o');
       ...subtotalAIToolkit.getTools(),
     },
     maxSteps: 5,
-    prompt:
-      'Get the purchase details for the purchase with id 1234567890',
+    prompt: 'Get the purchase details for the purchase with id 1234567890',
   });
 
   console.log(result);
