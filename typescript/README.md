@@ -19,13 +19,13 @@ npm install @subtotal-inc/ai-toolkit
 The library needs to be configured with your account's key id and secret key available in your [Subtotal Dashboard][api-keys]. Additionally, `configuration` enables you to specify the types of actions that can be taken using the toolkit.
 
 ```typescript
-import {SubtotalAIToolkit} from '@subtotal-inc/ai-toolkit/langchain';
+import {SubtotalAIToolkit, Tools} from '@subtotal-inc/ai-toolkit/langchain';
 
 const subtotalAIToolkit = new SubtotalAIToolkit({
   keyId: process.env.SUBTOTAL_KEY_ID!,
   secretKey: process.env.SUBTOTAL_SECRET_KEY!,
   configuration: {
-    tools: ['get-purchases', 'get-purchase-details'],
+    tools: [Tools.getPurchases, Tools.getPurchaseDetails],
   },
 });
 ```
@@ -56,14 +56,17 @@ const agentExecutor = new AgentExecutor({
 The Subtotal AI Toolkit also supports the [Model Context Protocol (MCP)](https://modelcontextprotocol.com/). See `/examples/modelcontextprotocol` for an example. The same configuration options are available, and the server can be run with all supported transports.
 
 ```typescript
-import {SubtotalAIToolkit} from '@subtotal-inc/ai-toolkit/modelcontextprotocol';
+import {
+  SubtotalAIToolkit,
+  Tools,
+} from '@subtotal-inc/ai-toolkit/modelcontextprotocol';
 import {StdioServerTransport} from '@modelcontextprotocol/sdk/server/stdio.js';
 
 const server = new SubtotalAIToolkit({
   keyId: process.env.SUBTOTAL_KEY_ID!,
   secretKey: process.env.SUBTOTAL_SECRET_KEY!,
   configuration: {
-    tools: ['get-purchases', 'get-purchase-details'],
+    tools: [Tools.getPurchases, Tools.getPurchaseDetails],
   },
 });
 

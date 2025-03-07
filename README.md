@@ -26,17 +26,18 @@ npm install @subtotal-inc/ai-toolkit
 The library needs to be configured with your account's secret key credentials which is available in your [Subtotal Dashboard][api-keys]. Additionally, `configuration` enables you to specify the types of actions that can be taken using the toolkit.
 
 ```typescript
-import { SubtotalAIToolkit } from "@subtotal-inc/ai-toolkit/langchain";
+import { SubtotalAIToolkit, Tools } from "@subtotal-inc/ai-toolkit/langchain";
 
 const subtotalAIToolkit = new SubtotalAIToolkit({
   keyId: process.env.SUBTOTAL_KEY_ID!,
   secretKey: process.env.SUBTOTAL_SECRET_KEY!,
   configuration: {
     tools: [
-      "create-connection",
-      "create-merchant-link-url",
-      "get-purchases",
-      "get-purchase-details"
+      Tools.createConnection,
+      Tools.createMerchantLinkUrl,
+      Tools.getPurchases,
+      Tools.getPurchaseDetails,
+      Tools.getMerchants,
     ],
   },
 });
@@ -78,7 +79,7 @@ Replace `<KEY_ID>` and `<SECRET_KEY>` with your actual Subtotal key ID and secre
 Alternatively, you can set up your own MCP server. For example:
 
 ```typescript
-import { SubtotalAIToolkit } from "@subtotal-inc/ai-toolkit/modelcontextprotocol";
+import { SubtotalAIToolkit, Tools } from "@subtotal-inc/ai-toolkit/modelcontextprotocol";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 
 const server = new SubtotalAIToolkit({
@@ -86,12 +87,13 @@ const server = new SubtotalAIToolkit({
   secretKey: process.env.SUBTOTAL_SECRET_KEY!,
   configuration: {
     tools: [
-      "create-connection",
-      "create-merchant-link-url",
-      "get-purchases",
-      "get-purchase-details"
+      Tools.createConnection,
+      Tools.createMerchantLinkUrl,
+      Tools.getPurchases,
+      Tools.getPurchaseDetails,
+      Tools.getMerchants,
     ],
-  }
+  },
 });
 
 async function main() {
