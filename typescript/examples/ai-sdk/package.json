@@ -9,7 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "@ai-sdk/openai": "^0.0.63",
-    "@subtotal-inc/ai-toolkit": "workspace:*",
+    "@subtotal-inc/ai-toolkit": "latest",
     "ai": "^3.4.7 || ^4.0.0",
     "dotenv": "^16.4.5"
   },

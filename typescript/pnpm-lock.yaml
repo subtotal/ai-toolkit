@@ -82,8 +82,8 @@ importers:
         specifier: ^0.0.63
         version: 0.0.63(zod@3.24.2)
       '@subtotal-inc/ai-toolkit':
-        specifier: workspace:*
-        version: link:../..
+        specifier: latest
+        version: 0.1.0(@langchain/core@0.3.42(openai@4.86.2(zod@3.24.2)))(@modelcontextprotocol/sdk@1.6.1)(ai@4.1.54(react@19.0.0)(zod@3.24.2))(openai@4.86.2(zod@3.24.2))
       ai:
         specifier: ^3.4.7 || ^4.0.0
         version: 4.1.54(react@19.0.0)(zod@3.24.2)
@@ -104,8 +104,8 @@ importers:
         specifier: ^0.3.5
         version: 0.3.17(@langchain/core@0.3.42(openai@4.86.2(zod@3.24.2)))
       '@subtotal-inc/ai-toolkit':
-        specifier: workspace:*
-        version: link:../..
+        specifier: latest
+        version: 0.1.0(@langchain/core@0.3.42(openai@4.86.2(zod@3.24.2)))(@modelcontextprotocol/sdk@1.6.1)(ai@4.1.54(react@19.0.0)(zod@3.24.2))(openai@4.86.2(zod@3.24.2))
       dotenv:
         specifier: ^16.4.5
         version: 16.4.7
@@ -120,8 +120,8 @@ importers:
   examples/openai:
     dependencies:
       '@subtotal-inc/ai-toolkit':
-        specifier: workspace:*
-        version: link:../..
+        specifier: latest
+        version: 0.1.0(@langchain/core@0.3.42(openai@4.86.2(zod@3.24.2)))(@modelcontextprotocol/sdk@1.6.1)(ai@4.1.54(react@19.0.0)(zod@3.24.2))(openai@4.86.2(zod@3.24.2))
       dotenv:
         specifier: ^16.4.5
         version: 16.4.7
@@ -822,6 +822,15 @@ packages:
 
   '@sinonjs/fake-timers@10.3.0':
     resolution: {integrity: sha512-V4BG07kuYSUkTCSBHG8G8TNhM+F19jXFWnQtzj+we8DrkpSBCee9Z3Ms8yiGer/dlmhe35/Xdgyo3/0rQKg7YA==}
+
+  '@subtotal-inc/ai-toolkit@0.1.0':
+    resolution: {integrity: sha512-3LcaBRfnHcd0iniWGoVLM8SstEMVBqpMcan/uUGf+zBg0QHIE6WZC+OPOCB7BrRdPhzpyh/6cOgcjk8VA1nTjg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@langchain/core': ^0.3.6
+      '@modelcontextprotocol/sdk': ^1.4.1
+      ai: ^4.1.54
+      openai: ^4.86.1
 
   '@tsconfig/node10@1.0.11':
     resolution: {integrity: sha512-DcRjDCujK/kCk/cUe8Xz8ZSpm8mS3mNNpta+jGCA6USEDfktlNvm1+IuZ9eTcDbNk41BHwpHHeW+N1lKCz4zOw==}
@@ -3950,6 +3959,15 @@ snapshots:
   '@sinonjs/fake-timers@10.3.0':
     dependencies:
       '@sinonjs/commons': 3.0.1
+
+  '@subtotal-inc/ai-toolkit@0.1.0(@langchain/core@0.3.42(openai@4.86.2(zod@3.24.2)))(@modelcontextprotocol/sdk@1.6.1)(ai@4.1.54(react@19.0.0)(zod@3.24.2))(openai@4.86.2(zod@3.24.2))':
+    dependencies:
+      '@langchain/core': 0.3.42(openai@4.86.2(zod@3.24.2))
+      '@modelcontextprotocol/sdk': 1.6.1
+      ai: 4.1.54(react@19.0.0)(zod@3.24.2)
+      openai: 4.86.2(zod@3.24.2)
+      zod: 3.24.2
+      zod-to-json-schema: 3.24.3(zod@3.24.2)
 
   '@tsconfig/node10@1.0.11': {}
 
