@@ -13,9 +13,8 @@ class SubtotalAPI {
   configuration: Configuration;
   apiConfig: SubtotalApiConfig;
 
-  constructor(keyId: string, secretKey: string, configuration: Configuration) {
+  constructor(secretKey: string, configuration: Configuration) {
     this.apiConfig = {
-      keyId,
       secretKey,
       baseUrl: 'https://api.subtotal.com',
     };

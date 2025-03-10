@@ -8,20 +8,18 @@ class SubtotalAIToolkit extends McpServer {
   private _subtotal: SubtotalAPI;
 
   constructor({
-    keyId,
     secretKey,
     configuration,
   }: {
-    keyId: string;
     secretKey: string;
     configuration: Configuration;
   }) {
     super({
       name: 'Subtotal',
-      version: '0.1.0',
+      version: '1.0.0',
     });
 
-    this._subtotal = new SubtotalAPI(keyId, secretKey, configuration);
+    this._subtotal = new SubtotalAPI(secretKey, configuration);
 
     const filteredTools = tools.filter((tool) =>
       isToolAllowed(tool, configuration)

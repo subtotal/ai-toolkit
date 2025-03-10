@@ -11,7 +11,6 @@ const llm = new ChatOpenAI({
 });
 
 const subtotalAIToolkit = new SubtotalAIToolkit({
-  keyId: process.env.SUBTOTAL_KEY_ID!,
   secretKey: process.env.SUBTOTAL_SECRET_KEY!,
   configuration: {
     tools: [Tools.getPurchases, Tools.getPurchaseDetails],

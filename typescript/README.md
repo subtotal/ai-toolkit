@@ -16,13 +16,12 @@ npm install @subtotal-inc/ai-toolkit
 
 ## Usage
 
-The library needs to be configured with your account's key id and secret key available in your [Subtotal Dashboard][api-keys]. Additionally, `configuration` enables you to specify the types of actions that can be taken using the toolkit.
+The library needs to be configured with your account's secret API key available in your [Subtotal Dashboard][api-keys]. Additionally, `configuration` enables you to specify the types of actions that can be taken using the toolkit.
 
 ```typescript
 import {SubtotalAIToolkit, Tools} from '@subtotal-inc/ai-toolkit/langchain';
 
 const subtotalAIToolkit = new SubtotalAIToolkit({
-  keyId: process.env.SUBTOTAL_KEY_ID!,
   secretKey: process.env.SUBTOTAL_SECRET_KEY!,
   configuration: {
     tools: [Tools.getPurchases, Tools.getPurchaseDetails],
@@ -63,7 +62,6 @@ import {
 import {StdioServerTransport} from '@modelcontextprotocol/sdk/server/stdio.js';
 
 const server = new SubtotalAIToolkit({
-  keyId: process.env.SUBTOTAL_KEY_ID!,
   secretKey: process.env.SUBTOTAL_SECRET_KEY!,
   configuration: {
     tools: [Tools.getPurchases, Tools.getPurchaseDetails],

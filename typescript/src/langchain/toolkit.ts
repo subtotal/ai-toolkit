@@ -10,15 +10,13 @@ class SubtotalAIToolkit implements BaseToolkit {
   tools: SubtotalTool[];
 
   constructor({
-    keyId,
     secretKey,
     configuration,
   }: {
-    keyId: string;
     secretKey: string;
     configuration: Configuration;
   }) {
-    this._subtotal = new SubtotalAPI(keyId, secretKey, configuration);
+    this._subtotal = new SubtotalAPI(secretKey, configuration);
 
     const filteredTools = tools.filter((tool) =>
       isToolAllowed(tool, configuration)

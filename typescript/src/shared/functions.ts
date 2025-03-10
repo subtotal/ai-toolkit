@@ -7,7 +7,6 @@ import {
 } from './parameters';
 
 export interface SubtotalApiConfig {
-  keyId: string;
   secretKey: string;
   baseUrl: string;
 }
@@ -20,7 +19,6 @@ export const createConnection = async (
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'X-Api-Key-Id': apiConfig.keyId,
       'X-Api-Key': apiConfig.secretKey,
     },
     body: JSON.stringify(params),
@@ -41,7 +39,6 @@ export const createMerchantLinkUrl = async (
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-Api-Key-Id': apiConfig.keyId,
         'X-Api-Key': apiConfig.secretKey,
       },
       body: JSON.stringify({scope: 'link'}),
@@ -72,7 +69,6 @@ const getAccessToken = async (
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-Api-Key-Id': apiConfig.keyId,
         'X-Api-Key': apiConfig.secretKey,
       },
       body: JSON.stringify({scope: 'access'}),
@@ -94,7 +90,6 @@ export const getPurchases = async (
     method: 'GET',
     headers: {
       Authorization: `Bearer ${accessToken}`,
-      'X-Api-Key-Id': apiConfig.keyId,
       'X-Api-Key': apiConfig.secretKey,
     },
   });
@@ -121,7 +116,6 @@ export const getPurchaseDetails = async (
       method: 'GET',
       headers: {
         Authorization: `Bearer ${accessToken}`,
-        'X-Api-Key-Id': apiConfig.keyId,
         'X-Api-Key': apiConfig.secretKey,
       },
     }
@@ -136,7 +130,6 @@ export const getMerchants = async (apiConfig: SubtotalApiConfig) => {
   const response = await fetch(`${apiConfig.baseUrl}/merchants`, {
     method: 'GET',
     headers: {
-      'X-Api-Key-Id': apiConfig.keyId,
       'X-Api-Key': apiConfig.secretKey,
     },
   });
