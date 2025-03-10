@@ -16,11 +16,10 @@ type ToolkitConfig = {
 
 type Options = {
   tools?: string[];
-  subtotalKeyId?: string;
   subtotalSecretKey?: string;
 };
 
-const ACCEPTED_ARGS = ['subtotal-key-id', 'subtotal-secret-key', 'tools'];
+const ACCEPTED_ARGS = ['subtotal-secret-key', 'tools'];
 
 export function parseArgs(args: string[]): Options {
   const options: Options = {};
@@ -31,8 +30,6 @@ export function parseArgs(args: string[]): Options {
 
       if (key == 'tools') {
         options.tools = value.split(',');
-      } else if (key == 'subtotal-key-id') {
-        options.subtotalKeyId = value;
       } else if (key == 'subtotal-secret-key') {
         options.subtotalSecretKey = value;
       } else {
@@ -67,15 +64,13 @@ export function parseArgs(args: string[]): Options {
   });
 
   // Get Subtotal API Credentials
-  const subtotalKeyId = options.subtotalKeyId || process.env.SUBTOTAL_KEY_ID;
   const subtotalSecretKey =
     options.subtotalSecretKey || process.env.SUBTOTAL_SECRET_KEY;
-  if (!subtotalKeyId || !subtotalSecretKey) {
+  if (!subtotalSecretKey) {
     throw new Error(
-      'Subtotal API key data not provided. Please either pass it as an argument --subtotal-key-id=$KEY-ID and --subtotal-secret-key=$SECRET-KEY or set the SUBTOTAL_KEY_ID and SUBTOTAL_SECRET_KEY environment variables.'
+      'Subtotal API key not provided. Please either pass it as an argument --subtotal-secret-key=$SECRET-KEY or set the SUBTOTAL_SECRET_KEY environment variable.'
     );
   }
-  options.subtotalKeyId = subtotalKeyId;
   options.subtotalSecretKey = subtotalSecretKey;
   return options;
 }
@@ -99,7 +94,6 @@ export async function main() {
   }
 
   const server = new SubtotalAIToolkit({
-    keyId: options.subtotalKeyId!,
     secretKey: options.subtotalSecretKey!,
     configuration: configuration,
   });

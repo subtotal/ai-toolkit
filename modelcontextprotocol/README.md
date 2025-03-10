@@ -8,14 +8,14 @@ To run the Subtotal MCP server using npx, use the following command:
 
 ```bash
 # To set up all available tools
-npx -y @subtotal-inc/mcp --tools=all --subtotal-key-id=<KEY-ID> --subtotal-secret-key=<SECRET-KEY>
+npx -y @subtotal-inc/mcp --tools=all --subtotal-secret-key=<SECRET-KEY>
 
 # To set up specific tools
-npx -y @subtotal-inc/mcp --tools=get-purchases,get-purchase-details --subtotal-key-id=<KEY-ID> --subtotal-secret-key=<SECRET-KEY>
+npx -y @subtotal-inc/mcp --tools=get-purchases,get-purchase-details --subtotal-secret-key=<SECRET-KEY>
 ```
 
-Make sure to replace `<KEY-ID>` and `<SECRET-KEY>` with your actual Subtotal API key ID and secret key value.
-Alternatively, you could set the SUBTOTAL_KEY_ID and SUBTOTAL_SECRET_KEY in your environment variables.
+Make sure to replace `<SECRET-KEY>` with your actual Subtotal API secret API key value.
+Alternatively, you could set the SUBTOTAL_SECRET_KEY environment variable.
 
 ### Usage with Claude Desktop
 
@@ -30,7 +30,6 @@ Add the following to your `claude_desktop_config.json`. See [here](https://model
                 “-y”,
                 “@subtotal-inc/mcp”,
                 “--tools=all”,
-                “--subtotal-key-id=<KEY-ID>”,
                 “--subtotal-secret-key=<SECRET-KEY>”
             ]
         }
@@ -62,12 +61,12 @@ Run the following command in your terminal:
 
 ```bash
 # Start MCP Inspector and server with all tools
-npx @modelcontextprotocol/inspector node dist/index.js --tools=all --subtotal-key-id=<KEY-ID> --subtotal-secret-key=<SECRET-KEY>
+npx @modelcontextprotocol/inspector node dist/index.js --tools=all --subtotal-secret-key=<SECRET-KEY>
 ```
 
 ### Instructions
 
-1. Replace `<KEY-ID>` and `<SECRET-KEY>` with your actual Subtotal API key ID and secret key value.
+1. Replace `<SECRET-KEY>` with your actual Subtotal API secret key value.
 2. Run the command to start the MCP Inspector.
 3. Open the MCP Inspector UI in your browser and click Connect to start the MCP server.
 4. You can see the list of tools you selected and test each tool individually.
