@@ -10,15 +10,13 @@ class SubtotalAIToolkit {
   tools: {[key: string]: CoreTool};
 
   constructor({
-    keyId,
     secretKey,
     configuration,
   }: {
-    keyId: string;
     secretKey: string;
     configuration: Configuration;
   }) {
-    this._subtotal = new SubtotalAPI(keyId, secretKey, configuration);
+    this._subtotal = new SubtotalAPI(secretKey, configuration);
     this.tools = {};
 
     const filteredTools = tools.filter((tool) =>
