@@ -11,6 +11,24 @@ want to use the package, just run:
 pip install subtotal-ai-toolkit
 ```
 
+You can specify the specific optional dependencies you need if you'd like them to be installed by this package. For example, if you intend on using the OpenAI integration, you can run:
+
+```sh
+pip install subtotal-ai-toolkit[openai]
+```
+
+Optional dependencies include:
+
+- `openai`
+- `langchain`
+- `crewai`
+
+If you'd like to only install all optional dependencies, you can run:
+
+```sh
+pip install subtotal-ai-toolkit[all]
+```
+
 ### Requirements
 
 - Python 3.11+
@@ -30,7 +48,20 @@ subtotal_toolkit = SubtotalAIToolkit(
 )
 ```
 
-The toolkit works with LangChain and CrewAI and can be passed as a list of tools. For example:
+**NOTE:** The toolkit works with LangChain, CrewAI, and OpenAI. The above example is for CrewAI. Use the correct import depending on which framework you're using.
+
+```python
+# CrewAI
+from subtotal_ai_toolkit.crewai.toolkit import SubtotalAIToolkit
+
+# LangChain
+from subtotal_ai_toolkit.langchain.toolkit import SubtotalAIToolkit
+
+# OpenAI
+from subtotal_ai_toolkit.openai.toolkit import SubtotalAIToolkit
+```
+
+The toolkit can be passed as a list of tools. For example (using CrewAI):
 
 ```python
 from crewai import Agent, Task, Crew
@@ -60,7 +91,7 @@ crew = Crew(
 crew.kickoff()
 ```
 
-Examples for LangChain and CrewAI are included in `/examples`.
+Examples for LangChain, CrewAI, and OpenAI are included in the `examples` directory.
 
 [api-keys]: https://dashboard.subtotal.com/api-keys
 

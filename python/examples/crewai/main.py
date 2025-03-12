@@ -1,9 +1,10 @@
 import os
+
+from crewai import Agent, Crew, Task
 from dotenv import load_dotenv
 
-from crewai import Agent, Task, Crew
-from subtotal_ai_toolkit.crewai.toolkit import SubtotalAIToolkit
 from subtotal_ai_toolkit.configuration import Configuration, Tools
+from subtotal_ai_toolkit.crewai.toolkit import SubtotalAIToolkit
 
 load_dotenv()
 

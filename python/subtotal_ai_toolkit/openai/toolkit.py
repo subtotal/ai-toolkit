@@ -1,14 +1,14 @@
 """Subtotal AI Toolkit."""
 
-from typing import List
-from pydantic import PrivateAttr
 import json
-from openai.types.chat import ChatCompletionToolParam, ChatCompletionToolMessageParam, ChatCompletionMessageToolCall
+from typing import List
 
+from openai.types.chat import ChatCompletionMessageToolCall, ChatCompletionToolMessageParam, ChatCompletionToolParam
+from pydantic import PrivateAttr
 
 from ..api import SubtotalAPI
-from ..tools import tools
 from ..configuration import Configuration, is_tool_allowed
+from ..tools import tools
 
 
 class SubtotalAIToolkit:

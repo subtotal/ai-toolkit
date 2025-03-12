@@ -3,8 +3,8 @@
 from pydantic import PrivateAttr
 
 from ..api import SubtotalAPI
-from ..tools import tools
 from ..configuration import Configuration, is_tool_allowed
+from ..tools import tools
 from .tool import SubtotalTool
 
 

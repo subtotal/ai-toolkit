@@ -5,9 +5,9 @@ This tool allows agents to interact with the Subtotal API.
 from __future__ import annotations
 
 from typing import Any, Optional, Type
-from pydantic import BaseModel
 
 from langchain.tools import BaseTool
+from pydantic import BaseModel
 
 from ..api import SubtotalAPI
 

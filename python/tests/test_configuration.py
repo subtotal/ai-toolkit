@@ -1,7 +1,9 @@
 import unittest
-from subtotal_ai_toolkit.configuration import is_tool_allowed, Configuration, Tools
-from subtotal_ai_toolkit.tools import Tool
+
 from pydantic import BaseModel
+
+from subtotal_ai_toolkit.configuration import Configuration, Tools, is_tool_allowed
+from subtotal_ai_toolkit.tools import Tool
 
 
 def create_test_tool(method: str) -> Tool:

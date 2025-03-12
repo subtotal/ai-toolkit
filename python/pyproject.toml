@@ -1,3 +1,9 @@
+# Build System Requirements
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+# Project Specification
 [project]
 name = "subtotal-ai-toolkit"
 version = "0.1.0"
@@ -8,6 +14,24 @@ authors = [
   {name = "Subtotal", email = "support@subtotal.com"}
 ]
 keywords = ["subtotal", "api"]
+dependencies = [
+  "pydantic>=2.9.0,<3.0.0",
+]
+requires-python = ">=3.11"
+
+# Optional Dependencies
+[project.optional-dependencies]
+openai = [
+  "openai>=1.65.0,<2.0.0"
+]
+langchain = [
+  "langchain>=0.3.0,<1.0.0",
+]
+crewai = [
+  "crewai>=0.76.0,<1.0.0",
+  "crewai-tools>=0.13.0,<1.0.0",
+]
+all = ["subtotal[openai,langchain,crewai]"]
 
 [project.urls]
 "Bug Tracker" = "https://github.com/subtotal-inc/ai-toolkit/issues"
@@ -20,6 +44,14 @@ exclude = ["tests*", "examples*"]
 [tool.ruff]
 line-length = 120
 extend-exclude = ["build"]
+
+[tool.ruff.lint]
+select = [
+  "B",  # flake8-bugbear
+  "E",  # pycodestyle
+  "F",  # pyflakes
+  "I",  # isort
+]
 
 [tool.ruff.format]
 # currently the default value, but opt-out in the future

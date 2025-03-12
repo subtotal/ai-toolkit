@@ -1,22 +1,20 @@
-from typing import TypedDict, Type
+from typing import Type, TypedDict
 
 from pydantic import BaseModel
-
 
 from .prompts import (
     CREATE_CONNECTION_PROMPT,
     CREATE_MERCHANT_LINK_URL_PROMPT,
-    GET_PURCHASES_PROMPT,
-    GET_PURCHASE_DETAILS_PROMPT,
     GET_MERCHANTS_PROMPT,
+    GET_PURCHASE_DETAILS_PROMPT,
+    GET_PURCHASES_PROMPT,
 )
-
 from .schema import (
     CreateConnection,
     CreateMerchantLinkUrl,
-    GetPurchases,
-    GetPurchaseDetails,
     GetMerchants,
+    GetPurchaseDetails,
+    GetPurchases,
 )
 
 

@@ -1,13 +1,12 @@
 import os
-from dotenv import load_dotenv
 
+from dotenv import load_dotenv
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
 
-from subtotal_ai_toolkit.langchain.toolkit import SubtotalAIToolkit
-from subtotal_ai_toolkit.configuration import Configuration, Tools
-
 from langchain.agents import AgentExecutor, create_tool_calling_agent
-from langchain_core.prompts import ChatPromptTemplate
+from subtotal_ai_toolkit.configuration import Configuration, Tools
+from subtotal_ai_toolkit.langchain.toolkit import SubtotalAIToolkit
 
 load_dotenv()
 

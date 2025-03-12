@@ -4,16 +4,15 @@ import json
 
 from pydantic import BaseModel
 
+from .configuration import Configuration
 from .functions import (
+    SubtotalApiConfig,
     create_connection,
     create_merchant_link_url,
-    get_purchases,
-    get_purchase_details,
     get_merchants,
-    SubtotalApiConfig,
+    get_purchase_details,
+    get_purchases,
 )
-
-from .configuration import Configuration
 
 
 class SubtotalAPI(BaseModel):

@@ -3,9 +3,9 @@ PYTHON_VERSION?=3.11
 
 venv: $(VENV_NAME)/bin/activate
 
-$(VENV_NAME)/bin/activate: requirements.txt requirements-dev.txt
+$(VENV_NAME)/bin/activate: requirements.txt
 	@test -d $(VENV_NAME) || pyenv local $(PYTHON_VERSION) && python -m venv --clear $(VENV_NAME)
-	${VENV_NAME}/bin/python -m pip install -r requirements-dev.txt
+	${VENV_NAME}/bin/python -m pip install -r requirements.txt
 	@touch $(VENV_NAME)/bin/activate
 
 test: venv
@@ -22,11 +22,14 @@ build: venv
 check-lint: venv
 	${VENV_NAME}/bin/python -m ruff check
 
-fix-lint: venv
+lint: venv
 	${VENV_NAME}/bin/python -m ruff check --fix
 
 check-format: venv
 	${VENV_NAME}/bin/python -m ruff format --check
 
-fix-format: venv
+format: venv
 	${VENV_NAME}/bin/python -m ruff format
+
+clean:
+	rm -rf build dist *.egg-info

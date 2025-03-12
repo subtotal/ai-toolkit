@@ -1,7 +1,10 @@
-openai==1.65.1
 crewai==0.76.2
 crewai-tools===0.13.2
 langchain==0.3.4
 langchain-openai==0.2.2
+openai==1.65.1
 pydantic==2.9.2
+pyright==1.1.396
 python-dotenv==1.0.1
+ruff==0.4.4
+twine

@@ -1,10 +1,11 @@
 # type: ignore
 import os
-from dotenv import load_dotenv
 
+from dotenv import load_dotenv
 from openai import OpenAI
-from subtotal_ai_toolkit.openai.toolkit import SubtotalAIToolkit
+
 from subtotal_ai_toolkit.configuration import Configuration, Tools
+from subtotal_ai_toolkit.openai.toolkit import SubtotalAIToolkit
 
 load_dotenv()
 

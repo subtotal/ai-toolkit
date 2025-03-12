@@ -1,5 +1,0 @@
--r requirements.txt
-
-twine
-pyright==1.1.396
-ruff==0.4.4
