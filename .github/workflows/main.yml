@@ -110,6 +110,7 @@ jobs:
       - name: Install
         run: |
           python3.11 -m venv --clear venv
+          touch requirements.txt
           make venv
       
       - name: Check Linting
