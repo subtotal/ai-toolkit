@@ -1,0 +1,40 @@
+[project]
+name = "subtotal-ai-toolkit"
+version = "0.1.0"
+description = "Subtotal AI Toolkit"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Subtotal", email = "support@subtotal.com"}
+]
+keywords = ["subtotal", "api"]
+
+[project.urls]
+"Bug Tracker" = "https://github.com/subtotal-inc/ai-toolkit/issues"
+"Source Code" = "https://github.com/subtotal-inc/ai-toolkit"
+
+[tool.setuptools.packages.find]
+include = ["subtotal_ai_toolkit*"]
+exclude = ["tests*", "examples*"]
+
+[tool.ruff]
+line-length = 120
+extend-exclude = ["build"]
+
+[tool.ruff.format]
+# currently the default value, but opt-out in the future
+docstring-code-format = false
+
+[tool.pyright]
+include = [
+  "*",
+]
+typeCheckingMode = "basic"
+exclude = ["build", "**/__pycache__", "**/venv/**"]
+reportMissingTypeArgument = true
+reportUnnecessaryCast = true
+reportUnnecessaryComparison = true
+reportUnnecessaryContains = true
+reportUnnecessaryIsInstance = true
+reportPrivateImportUsage = true
+reportUnnecessaryTypeIgnoreComment = true
