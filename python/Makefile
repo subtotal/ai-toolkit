@@ -31,5 +31,8 @@ check-format: venv
 format: venv
 	${VENV_NAME}/bin/python -m ruff format
 
+check-build: venv
+	${VENV_NAME}/bin/python -m twine check dist/*
+
 clean:
 	rm -rf build dist *.egg-info

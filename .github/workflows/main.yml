@@ -127,4 +127,4 @@ jobs:
           set -x
           make clean
           make build
-          python -m twine check dist/*
+          make check-build
