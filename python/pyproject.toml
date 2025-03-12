@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 # Project Specification
 [project]
 name = "subtotal-ai-toolkit"
-version = "0.1.0"
+version = "0.2.0"
 description = "Subtotal AI Toolkit"
 readme = "README.md"
 license = {file = "LICENSE"}
@@ -31,7 +31,7 @@ crewai = [
   "crewai>=0.76.0,<1.0.0",
   "crewai-tools>=0.13.0,<1.0.0",
 ]
-all = ["subtotal[openai,langchain,crewai]"]
+all = ["subtotal-ai-toolkit[openai,langchain,crewai]"]
 
 [project.urls]
 "Bug Tracker" = "https://github.com/subtotal-inc/ai-toolkit/issues"
