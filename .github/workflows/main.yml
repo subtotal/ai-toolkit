@@ -89,3 +89,42 @@ jobs:
 
       - name: Test
         run: pnpm run test
+  
+  python-build:
+    name: Build - Python
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./python
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        run: |
+          python3.11 -m venv --clear venv
+          touch requirements.txt
+          make venv
+      
+      - name: Check Linting
+        run: make check-lint
+      
+      - name: Check Formatting
+        run: make check-format
+      
+      - name: Run Tests
+        run: make test
+      
+      - name: Build Package
+        run: |
+          set -x
+          make clean
+          make build
+          make check-build
