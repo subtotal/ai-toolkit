@@ -9,9 +9,9 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@subtotal-inc/ai-toolkit": "^1.0.1",
     "dotenv": "^16.4.5",
-    "openai": "^4.86.1",
-    "@subtotal-inc/ai-toolkit": "latest"
+    "openai": "^4.86.1"
   },
   "devDependencies": {
     "@types/node": "^22.7.4"
