@@ -12,6 +12,7 @@ export default function SubtotalTool(
     description: description,
     inputSchema: schema,
     executeAsync: async (arg: z.output<typeof schema>) => {
+      // eslint-disable-next-line no-return-await
       return await subtotalApi.run(method, arg);
     },
   } as any);
