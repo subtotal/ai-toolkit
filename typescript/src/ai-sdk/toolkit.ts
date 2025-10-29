@@ -1,13 +1,12 @@
 import SubtotalAPI from '../shared/api';
 import tools from '../shared/tools';
 import {isToolAllowed, type Configuration} from '../shared/configuration';
-import type {CoreTool} from 'ai';
 import SubtotalTool from './tool';
 
 class SubtotalAIToolkit {
   private _subtotal: SubtotalAPI;
 
-  tools: {[key: string]: CoreTool};
+  tools: {[key: string]: ReturnType<typeof SubtotalTool>};
 
   constructor({
     secretKey,
@@ -34,7 +33,7 @@ class SubtotalAIToolkit {
     });
   }
 
-  getTools(): {[key: string]: CoreTool} {
+  getTools(): {[key: string]: ReturnType<typeof SubtotalTool>} {
     return this.tools;
   }
 }

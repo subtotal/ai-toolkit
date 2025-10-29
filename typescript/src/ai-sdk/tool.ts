@@ -1,4 +1,3 @@
-import type {CoreTool} from 'ai';
 import {tool} from 'ai';
 import {z} from 'zod';
 import SubtotalAPI from '../shared/api';
@@ -8,12 +7,13 @@ export default function SubtotalTool(
   method: string,
   description: string,
   schema: z.ZodObject<any, any, any, any, {[x: string]: any}>
-): CoreTool {
+) {
   return tool({
     description: description,
-    parameters: schema,
-    execute: (arg: z.output<typeof schema>) => {
-      return subtotalApi.run(method, arg);
+    inputSchema: schema,
+    executeAsync: async (arg: z.output<typeof schema>) => {
+      // eslint-disable-next-line no-return-await
+      return await subtotalApi.run(method, arg);
     },
-  });
+  } as any);
 }
