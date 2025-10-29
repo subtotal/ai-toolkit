@@ -1,6 +1,6 @@
 {
   "name": "@subtotal-inc/ai-toolkit",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "homepage": "https://github.com/typecastle/ai-toolkit",
   "scripts": {
     "build": "tsup",
@@ -64,7 +64,7 @@
   "peerDependencies": {
     "@langchain/core": "^0.3.6",
     "@modelcontextprotocol/sdk": "^1.4.1",
-    "ai": "^4.1.54",
+    "ai": "^5.0.1",
     "openai": "^4.86.1"
   },
   "workspaces": [
