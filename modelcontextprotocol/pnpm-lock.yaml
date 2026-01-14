@@ -6,6 +6,7 @@ settings:
 
 overrides:
   jsondiffpatch: 0.7.2
+  hono: ^4.11.4
 
 importers:
 
@@ -13,13 +14,16 @@ importers:
     dependencies:
       '@modelcontextprotocol/sdk':
         specifier: ^1.13.1
-        version: 1.25.1(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76)
+        version: 1.25.1(@cfworker/json-schema@4.1.1)(hono@4.11.4)(zod@3.25.76)
       '@subtotal-inc/ai-toolkit':
         specifier: latest
-        version: 1.0.3(@langchain/core@0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.1(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76))(ai@5.0.115(zod@3.25.76))(openai@4.104.0(zod@3.25.76))
+        version: 1.0.3(@langchain/core@0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.1(@cfworker/json-schema@4.1.1)(hono@4.11.4)(zod@3.25.76))(ai@5.0.115(zod@3.25.76))(openai@4.104.0(zod@3.25.76))
       colors:
         specifier: ^1.4.0
         version: 1.4.0
+      hono:
+        specifier: ^4.11.4
+        version: 4.11.4
     devDependencies:
       '@eslint/compat':
         specifier: ^1.3.0
@@ -308,7 +312,7 @@ packages:
     resolution: {integrity: sha512-vUcD0uauS7EU2caukW8z5lJKtoGMokxNbJtBiwHgpqxEXokaHCBkQUmCHhjFB1VUTWdqj25QoMkMKzgjq+uhrw==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
-      hono: ^4
+      hono: ^4.11.4
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1375,8 +1379,8 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
-  hono@4.11.1:
-    resolution: {integrity: sha512-KsFcH0xxHes0J4zaQgWbYwmz3UPOOskdqZmItstUG93+Wk1ePBLkLGwbP9zlmh1BFUiL8Qp+Xfu9P7feJWpGNg==}
+  hono@4.11.4:
+    resolution: {integrity: sha512-U7tt8JsyrxSRKspfhtLET79pU8K+tInj5QZXs1jSugO1Vq5dFj3kmZsRldo29mTBfcjDRVRXrEZ6LS63Cog9ZA==}
     engines: {node: '>=16.9.0'}
 
   html-escaper@2.0.2:
@@ -1893,6 +1897,7 @@ packages:
   node-domexception@1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
+    deprecated: Use your platform's native DOMException instead
 
   node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
@@ -2829,9 +2834,9 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
-  '@hono/node-server@1.19.7(hono@4.11.1)':
+  '@hono/node-server@1.19.7(hono@4.11.4)':
     dependencies:
-      hono: 4.11.1
+      hono: 4.11.4
 
   '@humanfs/core@0.19.1': {}
 
@@ -3060,9 +3065,9 @@ snapshots:
       - '@opentelemetry/sdk-trace-base'
       - openai
 
-  '@modelcontextprotocol/sdk@1.25.1(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76)':
+  '@modelcontextprotocol/sdk@1.25.1(@cfworker/json-schema@4.1.1)(hono@4.11.4)(zod@3.25.76)':
     dependencies:
-      '@hono/node-server': 1.19.7(hono@4.11.1)
+      '@hono/node-server': 1.19.7(hono@4.11.4)
       ajv: 8.17.1
       ajv-formats: 3.0.1(ajv@8.17.1)
       content-type: 1.0.5
@@ -3102,10 +3107,10 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@subtotal-inc/ai-toolkit@1.0.3(@langchain/core@0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.1(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76))(ai@5.0.115(zod@3.25.76))(openai@4.104.0(zod@3.25.76))':
+  '@subtotal-inc/ai-toolkit@1.0.3(@langchain/core@0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.1(@cfworker/json-schema@4.1.1)(hono@4.11.4)(zod@3.25.76))(ai@5.0.115(zod@3.25.76))(openai@4.104.0(zod@3.25.76))':
     dependencies:
       '@langchain/core': 0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76))
-      '@modelcontextprotocol/sdk': 1.25.1(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76)
+      '@modelcontextprotocol/sdk': 1.25.1(@cfworker/json-schema@4.1.1)(hono@4.11.4)(zod@3.25.76)
       ai: 5.0.115(zod@3.25.76)
       openai: 4.104.0(zod@3.25.76)
       zod: 3.25.76
@@ -4191,7 +4196,7 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  hono@4.11.1: {}
+  hono@4.11.4: {}
 
   html-escaper@2.0.2: {}
 

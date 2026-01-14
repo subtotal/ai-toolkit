@@ -25,13 +25,15 @@
   },
   "pnpm": {
     "overrides": {
-      "jsondiffpatch": "0.7.2"
+      "jsondiffpatch": "0.7.2",
+      "hono": "^4.11.4"
     }
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.13.1",
     "@subtotal-inc/ai-toolkit": "latest",
-    "colors": "^1.4.0"
+    "colors": "^1.4.0",
+    "hono": "^4.11.4"
   },
   "keywords": [
     "mcp",
