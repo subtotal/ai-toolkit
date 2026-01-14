@@ -9,17 +9,20 @@ importers:
   .:
     dependencies:
       '@langchain/core':
-        specifier: ^0.3.6
-        version: 0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76))
+        specifier: ^0.3.80
+        version: 0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76))
       '@modelcontextprotocol/sdk':
-        specifier: ^1.4.1
-        version: 1.25.1(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76)
+        specifier: ^1.25.2
+        version: 1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76)
       ai:
         specifier: ^5.0.1
         version: 5.0.115(zod@3.25.76)
       openai:
         specifier: ^4.86.1
         version: 4.104.0(zod@3.25.76)
+      qs:
+        specifier: ^6.14.1
+        version: 6.14.1
       zod:
         specifier: ^3.25.67
         version: 3.25.76
@@ -83,7 +86,7 @@ importers:
         version: 1.3.24(zod@3.25.76)
       '@subtotal-inc/ai-toolkit':
         specifier: ^1.0.1
-        version: 1.0.3(@langchain/core@0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.1(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76))(ai@5.0.115(zod@3.25.76))(openai@4.104.0(zod@3.25.76))
+        version: 1.0.3(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76))(ai@5.0.115(zod@3.25.76))(openai@4.104.0(zod@3.25.76))
       ai:
         specifier: ^5.0.1
         version: 5.0.115(zod@3.25.76)
@@ -101,20 +104,20 @@ importers:
   examples/langchain:
     dependencies:
       '@langchain/core':
-        specifier: ^0.3.6
-        version: 0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76))
+        specifier: ^0.3.80
+        version: 0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76))
       '@langchain/openai':
         specifier: ^0.3.5
-        version: 0.3.17(@langchain/core@0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))
+        version: 0.3.17(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))
       '@subtotal-inc/ai-toolkit':
         specifier: ^1.0.1
-        version: 1.0.3(@langchain/core@0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.1(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76))(ai@5.0.115(zod@3.25.76))(openai@4.104.0(zod@3.25.76))
+        version: 1.0.3(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76))(ai@5.0.115(zod@3.25.76))(openai@4.104.0(zod@3.25.76))
       dotenv:
         specifier: ^16.4.5
         version: 16.6.1
       langchain:
-        specifier: ^0.3.2
-        version: 0.3.36(@langchain/core@0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))(@opentelemetry/api@1.9.0)(handlebars@4.7.8)(openai@4.104.0(zod@3.25.76))
+        specifier: ^0.3.37
+        version: 0.3.37(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))(@opentelemetry/api@1.9.0)(handlebars@4.7.8)(openai@4.104.0(zod@3.25.76))
     devDependencies:
       '@types/node':
         specifier: ^22.7.4
@@ -124,7 +127,7 @@ importers:
     dependencies:
       '@subtotal-inc/ai-toolkit':
         specifier: ^1.0.1
-        version: 1.0.3(@langchain/core@0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.1(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76))(ai@5.0.115(zod@3.25.76))(openai@4.104.0(zod@3.25.76))
+        version: 1.0.3(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76))(ai@5.0.115(zod@3.25.76))(openai@4.104.0(zod@3.25.76))
       dotenv:
         specifier: ^16.4.5
         version: 16.6.1
@@ -660,8 +663,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
-  '@langchain/core@0.3.79':
-    resolution: {integrity: sha512-ZLAs5YMM5N2UXN3kExMglltJrKKoW7hs3KMZFlXUnD7a5DFKBYxPFMeXA4rT+uvTxuJRZPCYX0JKI5BhyAWx4A==}
+  '@langchain/core@0.3.80':
+    resolution: {integrity: sha512-vcJDV2vk1AlCwSh3aBm/urQ1ZrlXFFBocv11bz/NBUfLWD5/UDNMzwPdaAd2dKvNmTWa9FM2lirLU3+JCf4cRA==}
     engines: {node: '>=18'}
 
   '@langchain/openai@0.3.17':
@@ -676,8 +679,8 @@ packages:
     peerDependencies:
       '@langchain/core': '>=0.2.21 <0.4.0'
 
-  '@modelcontextprotocol/sdk@1.25.1':
-    resolution: {integrity: sha512-yO28oVFFC7EBoiKdAn+VqRm+plcfv4v0xp6osG/VsCB0NlPZWi87ajbCZZ8f/RvOFLEu7//rSRmuZZ7lMoe3gQ==}
+  '@modelcontextprotocol/sdk@1.25.2':
+    resolution: {integrity: sha512-LZFeo4F9M5qOhC/Uc1aQSrBHxMrvxett+9KLHt7OhcExtoiRN9DKgbZffMP/nxjutWDQpfMDfP3nkHI4X9ijww==}
     engines: {node: '>=18'}
     peerDependencies:
       '@cfworker/json-schema': ^4.1.1
@@ -2176,8 +2179,8 @@ packages:
     resolution: {integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==}
     engines: {node: '>=6'}
 
-  langchain@0.3.36:
-    resolution: {integrity: sha512-PqC19KChFF0QlTtYDFgfEbIg+SCnCXox29G8tY62QWfj9bOW7ew2kgWmPw5qoHLOTKOdQPvXET20/1Pdq8vAtQ==}
+  langchain@0.3.37:
+    resolution: {integrity: sha512-1jPsZ6xsxkcQPUvqRjvfuOLwZLLyt49hzcOK7OYAJovIkkOxd5gzK4Yw6giPUQ8g4XHyvULNlWBz+subdkcokw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/anthropic': '*'
@@ -2615,8 +2618,8 @@ packages:
   pure-rand@6.1.0:
     resolution: {integrity: sha512-bVWawvoZoBYpp6yIoQtQXHZjmz35RSVHnUOTefl8Vcjr8snTPY1wnpSPMWekcFwbxI6gtmT7rSYPFvz71ldiOA==}
 
-  qs@6.14.0:
-    resolution: {integrity: sha512-YWWTjgABSKcvs/nWBi9PycY/JiPJqOD4JA6o9Sej2AtvSGarXxKC3OQSk4pAarbdQlKAh5D4FCQkJNkW+GAn3w==}
+  qs@6.14.1:
+    resolution: {integrity: sha512-4EK3+xJl8Ts67nLYNwqw/dsFVnCf+qR7RgXSK9jEEm9unao3njwMDdmsdvoKBKHzxd7tCYz5e5M+SnMjdtXGQQ==}
     engines: {node: '>=0.6'}
 
   range-parser@1.2.1:
@@ -3714,7 +3717,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@langchain/core@0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76))':
+  '@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76))':
     dependencies:
       '@cfworker/json-schema': 4.1.1
       ansi-styles: 5.2.0
@@ -3734,9 +3737,9 @@ snapshots:
       - '@opentelemetry/sdk-trace-base'
       - openai
 
-  '@langchain/openai@0.3.17(@langchain/core@0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))':
+  '@langchain/openai@0.3.17(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))':
     dependencies:
-      '@langchain/core': 0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76))
+      '@langchain/core': 0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76))
       js-tiktoken: 1.0.21
       openai: 4.104.0(zod@3.25.76)
       zod: 3.25.76
@@ -3745,12 +3748,12 @@ snapshots:
       - encoding
       - ws
 
-  '@langchain/textsplitters@0.1.0(@langchain/core@0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))':
+  '@langchain/textsplitters@0.1.0(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))':
     dependencies:
-      '@langchain/core': 0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76))
+      '@langchain/core': 0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76))
       js-tiktoken: 1.0.21
 
-  '@modelcontextprotocol/sdk@1.25.1(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76)':
+  '@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76)':
     dependencies:
       '@hono/node-server': 1.19.7(hono@4.11.1)
       ajv: 8.17.1
@@ -3858,10 +3861,10 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@subtotal-inc/ai-toolkit@1.0.3(@langchain/core@0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.1(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76))(ai@5.0.115(zod@3.25.76))(openai@4.104.0(zod@3.25.76))':
+  '@subtotal-inc/ai-toolkit@1.0.3(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))(@modelcontextprotocol/sdk@1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76))(ai@5.0.115(zod@3.25.76))(openai@4.104.0(zod@3.25.76))':
     dependencies:
-      '@langchain/core': 0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76))
-      '@modelcontextprotocol/sdk': 1.25.1(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76)
+      '@langchain/core': 0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76))
+      '@modelcontextprotocol/sdk': 1.25.2(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76)
       ai: 5.0.115(zod@3.25.76)
       openai: 4.104.0(zod@3.25.76)
       zod: 3.25.76
@@ -4242,7 +4245,7 @@ snapshots:
       http-errors: 2.0.1
       iconv-lite: 0.7.1
       on-finished: 2.4.1
-      qs: 6.14.0
+      qs: 6.14.1
       raw-body: 3.0.2
       type-is: 2.0.1
     transitivePeerDependencies:
@@ -4798,7 +4801,7 @@ snapshots:
       once: 1.4.0
       parseurl: 1.3.3
       proxy-addr: 2.0.7
-      qs: 6.14.0
+      qs: 6.14.1
       range-parser: 1.2.1
       router: 2.2.0
       send: 1.2.1
@@ -5575,11 +5578,11 @@ snapshots:
 
   kleur@3.0.3: {}
 
-  langchain@0.3.36(@langchain/core@0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))(@opentelemetry/api@1.9.0)(handlebars@4.7.8)(openai@4.104.0(zod@3.25.76)):
+  langchain@0.3.37(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))(@opentelemetry/api@1.9.0)(handlebars@4.7.8)(openai@4.104.0(zod@3.25.76)):
     dependencies:
-      '@langchain/core': 0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76))
-      '@langchain/openai': 0.3.17(@langchain/core@0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))
-      '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.79(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))
+      '@langchain/core': 0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76))
+      '@langchain/openai': 0.3.17(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))
+      '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.80(@opentelemetry/api@1.9.0)(openai@4.104.0(zod@3.25.76)))
       js-tiktoken: 1.0.21
       js-yaml: 4.1.1
       jsonpointer: 5.0.1
@@ -5925,7 +5928,7 @@ snapshots:
 
   pure-rand@6.1.0: {}
 
-  qs@6.14.0:
+  qs@6.14.1:
     dependencies:
       side-channel: 1.1.0
 
