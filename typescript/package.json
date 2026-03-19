@@ -68,6 +68,11 @@
     "ai": "^5.0.1",
     "openai": "^4.86.1"
   },
+  "pnpm": {
+    "overrides": {
+      "langsmith": ">=0.4.6"
+    }
+  },
   "workspaces": [
     ".",
     "examples/*"
