@@ -26,7 +26,8 @@
   "pnpm": {
     "overrides": {
       "jsondiffpatch": "0.7.2",
-      "langsmith": ">=0.4.6"
+      "langsmith": ">=0.4.6",
+      "hono": ">=4.12.7"
     }
   },
   "dependencies": {
