@@ -25,6 +25,7 @@
   },
   "pnpm": {
     "overrides": {
+      "handlebars": "^4.7.9",
       "jsondiffpatch": "0.7.2",
       "langsmith": ">=0.4.6",
       "hono": ">=4.12.7"
