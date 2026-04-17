@@ -70,9 +70,8 @@
   },
   "pnpm": {
     "overrides": {
-      "handlebars": "^4.7.9",
       "langsmith": ">=0.4.6",
-      "hono": ">=4.12.7"
+      "flatted": ">=3.4.2"
     }
   },
   "workspaces": [
