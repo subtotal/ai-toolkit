@@ -131,6 +131,7 @@ jobs:
 
   notify-failure:
     needs: [typescript-build, modelcontextprotocol-build, python-build]
+    permissions: {}
     if: ${{ failure() && github.event_name != 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
