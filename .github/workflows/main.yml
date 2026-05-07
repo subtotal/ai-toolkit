@@ -128,3 +128,32 @@ jobs:
           make clean
           make build
           make check-build
+
+  notify-failure:
+    needs: [typescript-build, modelcontextprotocol-build, python-build]
+    permissions: {}
+    if: ${{ failure() && github.event_name != 'pull_request' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Slack
+        env:
+          SLACK_CI_WEBHOOK_URL: ${{ secrets.SLACK_CI_WEBHOOK_URL }}
+        run: |
+          if [[ -z "${SLACK_CI_WEBHOOK_URL:-}" ]]; then
+            echo "SLACK_CI_WEBHOOK_URL not set; skipping notify"
+            exit 0
+          fi
+          short_sha="${GITHUB_SHA:0:7}"
+          run_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          commit_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA}"
+          jq -n \
+            --arg repo "$GITHUB_REPOSITORY" \
+            --arg workflow "$GITHUB_WORKFLOW" \
+            --arg branch "$GITHUB_REF_NAME" \
+            --arg actor "$GITHUB_ACTOR" \
+            --arg short_sha "$short_sha" \
+            --arg commit_url "$commit_url" \
+            --arg run_url "$run_url" \
+            '{text: (":rotating_light: *" + $repo + "* — workflow `" + $workflow + "` failed on `" + $branch + "`\nCommit: <" + $commit_url + "|`" + $short_sha + "`> by " + $actor + "\nRun: <" + $run_url + "|view logs>")}' \
+            | curl -sS -X POST -H 'Content-Type: application/json' --data @- "$SLACK_CI_WEBHOOK_URL" >/dev/null \
+            || echo "WARNING: Slack post failed" >&2
